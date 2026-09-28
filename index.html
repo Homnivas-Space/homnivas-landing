@@ -7,7 +7,7 @@
     <meta name="description" content="Your Space. Our Care. Fix your bad CIBIL or generate a 750+ score from zero with our Premium 90-Day Protocols.">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
@@ -16,41 +16,20 @@
                 extend: { 
                     colors: { 
                         elite: {
-                            black: '#050505',     
-                            dark: '#0a0a0a',      
+                            black: '#111827',     
+                            dark: '#1f2937',      
                             platinum: '#f8fafc',  
-                            border: '#1f1f1f',    
+                            border: '#e5e7eb',    
                         },
                         wealth: {
-                            dark: '#011c15',      
+                            dark: '#0f766e',      
                             teal: '#0d9488',      
                             emerald: '#059669',   
-                            mint: '#34d399',      
+                            mint: '#10b981',      
                         }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    animation: {
-                        'spin-slow': 'spin 8s linear infinite',
-                        'float': 'float 4s ease-in-out infinite',
-                        'pulse-glow': 'pulseGlow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'scanline': 'scanline 3s linear infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-12px)' },
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { opacity: 1, transform: 'scale(1)', filter: 'brightness(1)' },
-                            '50%': { opacity: 0.7, transform: 'scale(1.05)', filter: 'brightness(1.5)' },
-                        },
-                        scanline: {
-                            '0%': { transform: 'translateY(-100%)' },
-                            '100%': { transform: 'translateY(100%)' }
-                        }
                     }
                 }
             }
@@ -58,181 +37,127 @@
     </script>
     
     <style>
-        html, body { overflow-x: hidden; background-color: #ffffff; }
+        html, body { overflow-x: hidden; background-color: #ffffff; color: #111827; }
         
-        /* 🚀 Futuristic Scroll Reveal Animation */
-        .reveal { opacity: 0; transform: translateY(40px) scale(0.98); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0) scale(1); }
+        /* Minimalist Scroll Reveal */
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
         .delay-100 { transition-delay: 0.1s; }
         .delay-200 { transition-delay: 0.2s; }
-        .delay-300 { transition-delay: 0.3s; }
         
-        /* Video Player Styles */
+        /* Sleek Video Player */
         .video-container {
             position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-            border-radius: 1.5rem; box-shadow: 0 25px 50px -12px rgba(2, 44, 34, 0.4);
-            background: #050505; cursor: pointer; border: 1px solid rgba(52, 211, 153, 0.2);
-            transform: translateZ(0);
+            border-radius: 1.25rem; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+            background: #f8fafc; cursor: pointer; border: 1px solid #e5e7eb;
         }
         .video-container video, .video-container img {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
-            opacity: 0.85; transition: 0.5s ease;
+            transition: 0.5s ease;
         }
         .video-overlay {
-            position: absolute; inset: 0; background: linear-gradient(to top, rgba(2, 44, 34, 0.95), rgba(2, 44, 34, 0.2), transparent);
-            pointer-events: none; transition: 0.3s;
+            position: absolute; inset: 0; background: rgba(0,0,0,0.2);
+            transition: 0.3s; pointer-events: none;
         }
+        .video-container:hover .video-overlay { background: rgba(0,0,0,0.1); }
         .video-container.is-playing .video-overlay,
         .video-container.is-playing .play-btn-wrapper,
         .video-container.is-playing .video-text-overlay,
         .video-container.is-playing img { opacity: 0; visibility: hidden; }
-        .video-container.is-playing video { opacity: 1; mix-blend-mode: normal; }
 
-        /* 3D UI & Gradients */
-        .text-gradient-wealth {
-            background: linear-gradient(135deg, #0d9488 0%, #34d399 50%, #0d9488 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .glass-dark {
-            background: rgba(5, 5, 5, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(52, 211, 153, 0.2);
+        /* Minimal UI Components */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border: 1px solid #f3f4f6;
         }
 
-        .btn-3d {
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 6px 0 #022c22, 0 15px 25px rgba(5,150,105,0.4);
+        .minimal-card {
+            background: #ffffff; border: 1px solid #e5e7eb; border-radius: 1.25rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02), 0 2px 4px -1px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
         }
-        .btn-3d:active {
-            transform: translateY(4px);
-            box-shadow: 0 2px 0 #022c22, 0 5px 10px rgba(5,150,105,0.4);
+        .minimal-card:hover {
+            transform: translateY(-4px); box-shadow: 0 15px 30px -5px rgba(0,0,0,0.08); border-color: #d1d5db;
         }
 
-        /* 🚀 High-Tech Holographic Cards */
-        .holo-card {
-            background: #0a0a0a; border: 1px solid rgba(255,255,255,0.05); border-radius: 1.5rem;
-            position: relative; overflow: hidden; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        .btn-sleek {
+            transition: all 0.2s ease;
         }
-        .holo-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(52,211,153,0.8), transparent);
-            opacity: 0; transition: opacity 0.5s;
-        }
-        .holo-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: rgba(52,211,153,0.3);
-            box-shadow: 0 20px 40px -10px rgba(13,148,136,0.2), inset 0 0 20px rgba(13,148,136,0.05);
-        }
-        .holo-card:hover::before { opacity: 1; }
-        
-        /* Scanner line for cards */
-        .scanner {
-            position: absolute; top: 0; left: 0; width: 100%; height: 2px;
-            background: rgba(52,211,153,0.5); box-shadow: 0 0 10px rgba(52,211,153,0.5);
-            opacity: 0; transition: opacity 0.3s; z-index: 20; pointer-events: none;
-        }
-        .holo-card:hover .scanner { opacity: 1; animation: scanline 2s linear infinite; }
-
-        /* Modern Tabs for Mobile */
-        .tab-active { 
-            background: #050505; color: #ffffff; 
-            box-shadow: 0 10px 25px -5px rgba(13,148,136,0.3), inset 0 0 0 1px rgba(52,211,153,0.4); 
-            z-index: 10; transform: scale(1.02);
-        }
-        .tab-inactive { background-color: transparent; color: #6b7280; border: 1px solid transparent; }
-        .tab-inactive:hover { color: #ffffff; }
+        .btn-sleek:active { transform: scale(0.98); }
 
         /* Dynamic Content Transitions */
-        .content-fade { animation: softFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+        .content-fade { animation: softFadeIn 0.4s ease forwards; }
         @keyframes softFadeIn {
-            0% { opacity: 0; transform: translateY(20px) scale(0.98); filter: blur(5px); }
-            100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
-        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        .faq-open .faq-content { max-height: 800px; }
-        .faq-open .faq-icon { transform: rotate(180deg); color: #34d399; }
-
-        .modal-scroll::-webkit-scrollbar { width: 4px; }
-        .modal-scroll::-webkit-scrollbar-track { background: #050505; border-radius: 4px; }
-        .modal-scroll::-webkit-scrollbar-thumb { background: #0d9488; border-radius: 4px; }
+        /* FAQ */
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-open .faq-content { max-height: 500px; }
+        .faq-open .faq-icon { transform: rotate(180deg); color: #0d9488; }
     </style>
 </head>
-<body class="text-elite-black antialiased font-sans pt-12 tracking-tight bg-gray-50/20">
+<body class="antialiased pt-12 tracking-tight">
 
-    <div class="fixed top-0 w-full z-[60] bg-gradient-to-r from-wealth-dark via-elite-black to-wealth-dark text-wealth-mint text-[10px] md:text-[11px] font-mono text-center py-2 px-3 flex items-center justify-center gap-2 uppercase tracking-widest border-b border-wealth-teal/40 shadow-[0_4px_20px_rgba(13,148,136,0.3)]">
-        <span class="w-1.5 h-1.5 rounded-full bg-wealth-mint animate-pulse-glow flex-shrink-0"></span>
-        <span class="truncate">Systems Online: Protocol Pre-Approvals Active</span>
+    <!-- Top Banner -->
+    <div class="fixed top-0 w-full z-[60] bg-slate-50 text-gray-600 text-[10px] md:text-[11px] font-medium text-center py-2 px-3 flex items-center justify-center gap-2 uppercase tracking-widest border-b border-gray-200">
+        <span class="w-1.5 h-1.5 rounded-full bg-wealth-mint animate-pulse flex-shrink-0"></span>
+        <span class="truncate">Limited Slots: Genesis Pre-Approvals Active</span>
     </div>
 
-    <header class="fixed top-[32px] w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/50 shadow-sm transition-all">
-        <div class="max-w-7xl mx-auto px-4 md:px-8 h-14 md:h-16 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2.5 group">
-                <div class="relative flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-elite-black overflow-hidden group-hover:shadow-[0_0_20px_rgba(52,211,153,0.4)] transition-all duration-500 border border-gray-700 flex-shrink-0">
-                    <div class="absolute inset-0 bg-gradient-to-br from-wealth-teal/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <svg class="w-4 h-4 text-wealth-mint transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Header -->
+    <header class="fixed top-[32px] w-full z-50 glass-panel shadow-sm transition-all border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 h-14 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="flex items-center justify-center w-6 h-6 rounded bg-elite-black text-white">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                         <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                         <line x1="12" y1="22.08" x2="12" y2="12"></line>
                     </svg>
                 </div>
-                <div class="font-extrabold text-lg sm:text-xl tracking-tighter text-elite-black">
-                    Homnivas<span class="text-wealth-teal inline-block transition-colors duration-500 group-hover:text-wealth-mint">.space</span>
+                <div class="font-bold text-lg tracking-tight text-elite-black">
+                    Homnivas<span class="text-wealth-teal">.space</span>
                 </div>
             </a>
             <div class="flex items-center gap-1.5">
-                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-wealth-emerald hidden sm:block"></i>
-                <span class="text-[9px] md:text-[10px] font-mono font-bold text-gray-500 uppercase tracking-widest bg-gray-100/80 px-2.5 py-1.5 rounded-md border border-gray-200">AES-256</span>
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-wealth-teal hidden sm:block"></i>
+                <span class="text-[9px] font-bold text-gray-500 uppercase tracking-widest bg-gray-100 px-2 py-1 rounded">AES-256 Encrypted</span>
             </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 md:px-8 pt-10 md:pt-16 pb-16 relative">
-        <!-- Abstract Background Orbs -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-wealth-mint/10 rounded-full blur-[100px] pointer-events-none -z-10 animate-pulse-glow"></div>
-        <div class="absolute top-40 left-0 w-72 h-72 bg-wealth-teal/10 rounded-full blur-[80px] pointer-events-none -z-10"></div>
-
-        <section class="pt-8 sm:pt-12 pb-8 lg:pb-16 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <!-- Hero Section -->
+    <main class="max-w-7xl mx-auto px-4 md:px-8 pt-8 md:pt-12 pb-12">
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div class="reveal">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-teal-50 to-emerald-50 text-wealth-dark text-[10px] font-bold uppercase tracking-widest mb-5 border border-teal-200/50 shadow-sm">
-                    <i data-lucide="zap" class="w-3 h-3 text-wealth-emerald fill-current"></i>
-                    Elite Genesis & Reset Protocols
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 text-teal-700 text-[10px] font-bold uppercase tracking-widest mb-4 border border-teal-100">
+                    <i data-lucide="zap" class="w-3 h-3"></i> Elite Genesis & Reset Protocols
                 </span>
-                <h1 class="font-extrabold text-[2.5rem] leading-[1.1] sm:text-5xl lg:text-6xl tracking-tighter text-elite-black mb-4 drop-shadow-sm">
+                <h1 class="font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-elite-black mb-4 leading-[1.15]">
                     Step Into a Safe Space. <br>
-                    <span class="text-gradient-wealth">Rewrite Your Future.</span>
+                    <span class="text-wealth-teal">Rewrite Your Future.</span>
                 </h1>
-                <p class="text-[14px] md:text-base text-gray-500 mb-8 font-medium leading-relaxed max-w-lg">
+                <p class="text-[13px] md:text-[14px] text-gray-500 mb-6 font-medium leading-relaxed max-w-lg">
                     Whether you have a rejected CIBIL or zero credit history, our engineered 90-day protocols secure your guaranteed limits and unlock up to ₹5 Lakh in premium banking capital.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 mb-4">
-                    <a href="#breakdown" class="w-full sm:w-auto bg-wealth-dark hover:bg-elite-black text-white px-8 py-4 rounded-xl font-bold transition-all flex justify-center items-center gap-2 text-[14px] shadow-[0_10px_20px_rgba(2,44,34,0.2)] hover:-translate-y-1 hover:shadow-[0_15px_25px_rgba(2,44,34,0.3)]">
-                        Initialize Protocol <i data-lucide="arrow-down" class="w-4 h-4 text-wealth-mint animate-bounce"></i>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="#breakdown" class="w-full sm:w-auto bg-elite-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold transition-all flex justify-center items-center gap-2 text-[13px] btn-sleek shadow-md">
+                        Initialize Protocol <i data-lucide="arrow-down" class="w-4 h-4"></i>
                     </a>
                 </div>
             </div>
             
-            <div class="reveal delay-100 relative group mt-4 lg:mt-0">
-                <div class="absolute -inset-1.5 bg-gradient-to-r from-wealth-teal to-wealth-mint rounded-[1.5rem] blur-lg opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200 animate-pulse-glow"></div>
-                <div class="video-container relative z-10" id="heroVideoContainer" onclick="togglePlay()">
-                    <img src="https://images.unsplash.com/photo-1603899122634-f086ca5f5ddd?auto=format&fit=crop&w=800&q=80" alt="Indian Professional getting CIBIL Reset Approval" style="object-position: center top;">
+            <div class="reveal delay-100 mt-4 lg:mt-0">
+                <div class="video-container" id="heroVideoContainer" onclick="togglePlay()">
+                    <img src="https://images.unsplash.com/photo-1603899122634-f086ca5f5ddd?auto=format&fit=crop&w=800&q=80" alt="Indian Professional getting CIBIL Reset Approval">
                     <video id="heroVideo" preload="metadata" playsinline>
                         <source src="https://res.cloudinary.com/xbebhkge/video/upload/v1790168668/DefaultCibilLoan_Explainer.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
                     </video>
                     <div class="video-overlay"></div>
-                    <div class="absolute inset-0 flex items-center justify-center play-btn-wrapper transition-opacity duration-300 pointer-events-none">
-                        <div class="glass-dark w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(52,211,153,0.4)] border border-wealth-mint/50 animate-float">
-                            <i data-lucide="play" class="w-6 h-6 sm:w-8 sm:h-8 text-wealth-mint ml-1"></i>
-                        </div>
-                    </div>
-                    <div class="absolute bottom-5 left-5 right-5 flex items-center gap-3 text-white video-text-overlay transition-opacity duration-300 pointer-events-none">
-                        <div class="w-10 h-10 rounded-xl bg-black/50 backdrop-blur-lg border border-white/20 flex items-center justify-center flex-shrink-0 shadow-lg">
-                            <i data-lucide="smartphone" class="w-5 h-5 text-wealth-mint"></i>
-                        </div>
-                        <div class="drop-shadow-md">
-                            <p class="text-[10px] font-mono font-bold uppercase tracking-widest text-wealth-mint mb-0.5">Watch Explainer</p>
-                            <p class="text-xs sm:text-sm font-semibold leading-tight">See how our protocol works</p>
+                    <div class="absolute inset-0 flex items-center justify-center play-btn-wrapper transition-opacity duration-300">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-white/90 backdrop-blur rounded-full flex items-center justify-center shadow-lg border border-gray-200">
+                            <i data-lucide="play" class="w-5 h-5 text-elite-black ml-1"></i>
                         </div>
                     </div>
                 </div>
@@ -240,443 +165,404 @@
         </section>
     </main>
 
-    <!-- SECTION: Architecture of Trust (Futuristic Backend) -->
-    <section class="bg-elite-black py-16 md:py-24 relative overflow-hidden">
-        <div class="absolute top-0 right-1/4 w-96 h-96 bg-wealth-teal/10 rounded-full blur-[100px] pointer-events-none animate-pulse-glow"></div>
-        <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-wealth-mint/5 rounded-full blur-[100px] pointer-events-none"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10 text-center mb-12 reveal">
-            <span class="text-wealth-mint text-[10px] font-mono font-bold uppercase tracking-widest mb-2 block">// SYSTEM INFRASTRUCTURE</span>
-            <h2 class="font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tighter mb-4">Architecture of Trust</h2>
-            <p class="text-gray-400 text-[14px] md:text-base font-medium max-w-2xl mx-auto">How our backend guarantees your financial safety and fast-tracks your recovery.</p>
+    <!-- Clean Architecture of Trust -->
+    <section class="bg-slate-50 py-12 md:py-16 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 text-center mb-10 reveal">
+            <h2 class="font-extrabold text-2xl md:text-3xl text-elite-black tracking-tight mb-3">Architecture of Trust</h2>
+            <p class="text-gray-500 text-[13px] md:text-[14px] font-medium max-w-xl mx-auto">How our infrastructure guarantees your safety and fast-tracks recovery.</p>
         </div>
 
-        <div class="max-w-6xl mx-auto px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-            <div class="bg-[#0a0a0a] border border-white/5 rounded-[1.5rem] p-6 lg:p-8 card-3d-dark text-left reveal delay-100">
-                <i data-lucide="database" class="w-10 h-10 text-wealth-mint mb-5 animate-float"></i>
-                <h4 class="text-white font-bold text-base mb-2">Bureau API Sync</h4>
-                <p class="text-gray-400 text-[13px] leading-relaxed">Algorithmic connection with major credit bureaus for real-time tracking of dispute removals and score injections.</p>
+        <div class="max-w-5xl mx-auto px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div class="minimal-card p-5 text-left reveal delay-100">
+                <div class="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center mb-4 border border-teal-100">
+                    <i data-lucide="database" class="w-5 h-5 text-wealth-teal"></i>
+                </div>
+                <h4 class="font-bold text-[14px] text-elite-black mb-1.5">Bureau API Sync</h4>
+                <p class="text-gray-500 text-[12px] leading-relaxed">Direct connection with credit bureaus for real-time tracking of dispute removals.</p>
             </div>
-            <div class="bg-[#0a0a0a] border border-white/5 rounded-[1.5rem] p-6 lg:p-8 card-3d-dark text-left reveal delay-200">
-                <i data-lucide="scale" class="w-10 h-10 text-wealth-teal mb-5 animate-float" style="animation-delay: 0.5s;"></i>
-                <h4 class="text-white font-bold text-base mb-2">Legal Arbitration</h4>
-                <p class="text-gray-400 text-[13px] leading-relaxed">Financial attorneys draft airtight dispute notices to permanently erase fake entries, defaults, and hard inquiries.</p>
+            <div class="minimal-card p-5 text-left reveal delay-200">
+                <div class="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center mb-4 border border-teal-100">
+                    <i data-lucide="scale" class="w-5 h-5 text-wealth-teal"></i>
+                </div>
+                <h4 class="font-bold text-[14px] text-elite-black mb-1.5">Legal Arbitration</h4>
+                <p class="text-gray-500 text-[12px] leading-relaxed">Attorneys draft airtight disputes to legally erase fake entries and defaults.</p>
             </div>
-            <div class="bg-[#0a0a0a] border border-white/5 rounded-[1.5rem] p-6 lg:p-8 card-3d-dark text-left reveal delay-300">
-                <i data-lucide="building-2" class="w-10 h-10 text-wealth-mint mb-5 animate-float" style="animation-delay: 1s;"></i>
-                <h4 class="text-white font-bold text-base mb-2">RBI Compliant Vaults</h4>
-                <p class="text-gray-400 text-[13px] leading-relaxed">Your capital is never held by us. It routes directly to regulated banking partners to generate secure credit history.</p>
+            <div class="minimal-card p-5 text-left reveal delay-300">
+                <div class="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center mb-4 border border-teal-100">
+                    <i data-lucide="building-2" class="w-5 h-5 text-wealth-teal"></i>
+                </div>
+                <h4 class="font-bold text-[14px] text-elite-black mb-1.5">RBI Compliant Vaults</h4>
+                <p class="text-gray-500 text-[12px] leading-relaxed">Your capital is held by regulated banks, never by us, ensuring 100% security.</p>
             </div>
-            <div class="bg-[#0a0a0a] border border-white/5 rounded-[1.5rem] p-6 lg:p-8 card-3d-dark text-left reveal delay-400">
-                <i data-lucide="lock" class="w-10 h-10 text-wealth-teal mb-5 animate-float" style="animation-delay: 1.5s;"></i>
-                <h4 class="text-white font-bold text-base mb-2">AES-256 Encryption</h4>
-                <p class="text-gray-400 text-[13px] leading-relaxed">Military-grade protection ensures your PAN, Aadhaar, and banking data are shielded from third-party marketers.</p>
+            <div class="minimal-card p-5 text-left reveal delay-300">
+                <div class="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center mb-4 border border-teal-100">
+                    <i data-lucide="lock" class="w-5 h-5 text-wealth-teal"></i>
+                </div>
+                <h4 class="font-bold text-[14px] text-elite-black mb-1.5">AES-256 Encryption</h4>
+                <p class="text-gray-500 text-[12px] leading-relaxed">Military-grade protection for your KYC and banking data against breaches.</p>
             </div>
         </div>
     </section>
 
-    <!-- NEW "CHOOSE YOUR PROTOCOL" (Holographic Design) -->
-    <main class="max-w-7xl mx-auto px-4 md:px-8 relative z-20">
-        <section id="breakdown" class="py-16 md:py-24">
-            <div class="text-center mb-10 reveal">
-                <span class="text-wealth-teal text-[10px] font-mono font-bold uppercase tracking-widest mb-2 block">// INVESTMENT MODULES</span>
-                <h2 class="font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-elite-black mb-3">Choose Your Protocol</h2>
+    <!-- MINIMAL TABBED PRICING SECTION -->
+    <main class="max-w-7xl mx-auto px-4 md:px-8 pt-12 md:pt-20 pb-10">
+        <section id="breakdown">
+            <div class="text-center mb-8 reveal">
+                <h2 class="font-extrabold text-2xl md:text-3xl tracking-tight text-elite-black mb-2">Choose Your Protocol</h2>
+                <p class="text-gray-500 text-[13px] md:text-[14px]">Select the exact blueprint for your financial recovery.</p>
             </div>
 
-            <!-- UI Tab Selector (Sci-Fi Command Center look) -->
-            <div class="max-w-3xl mx-auto mb-10 reveal delay-100" role="tablist">
-                <div class="flex flex-col sm:flex-row bg-[#0a0a0a] p-2 rounded-[2rem] sm:rounded-full border border-gray-800 shadow-2xl gap-2">
-                    <button id="tab-standard" role="tab" onclick="switchPlan('standard')" class="flex-1 flex flex-col items-center justify-center h-[4.5rem] sm:h-16 rounded-[1.5rem] sm:rounded-full transition-all duration-300 outline-none w-full relative overflow-hidden group">
-                        <span class="font-bold text-[14px] sm:text-sm relative z-10">Genesis Standard</span>
-                        <span class="text-[11px] font-mono font-semibold opacity-90 mt-0.5 tracking-widest relative z-10">₹34,999</span>
+            <!-- FIXED MOBILE TABS: Horizontal Row, No Stacking -->
+            <div class="max-w-2xl mx-auto mb-8 reveal delay-100 w-full px-1">
+                <div class="flex flex-row bg-gray-100 p-1.5 rounded-[1.25rem] border border-gray-200 w-full">
+                    <button id="tab-standard" onclick="switchPlan('standard')" class="flex-1 flex flex-col items-center justify-center py-2 sm:py-2.5 rounded-xl transition-all duration-200 outline-none w-1/3">
+                        <span class="font-bold text-[11px] sm:text-[13px]">Standard</span>
+                        <span class="text-[9px] sm:text-[10px] text-gray-500 mt-0.5">₹34,999</span>
                     </button>
-                    <button id="tab-verified" role="tab" onclick="switchPlan('verified')" class="flex-1 flex flex-col items-center justify-center h-[4.5rem] sm:h-16 rounded-[1.5rem] sm:rounded-full transition-all duration-300 outline-none w-full relative overflow-hidden group">
-                        <span class="font-bold text-[14px] sm:text-sm relative z-10">Genesis Verified</span>
-                        <span class="text-[11px] font-mono font-semibold opacity-90 mt-0.5 tracking-widest relative z-10">₹14,999</span>
+                    <button id="tab-verified" onclick="switchPlan('verified')" class="flex-1 flex flex-col items-center justify-center py-2 sm:py-2.5 rounded-xl transition-all duration-200 outline-none w-1/3">
+                        <span class="font-bold text-[11px] sm:text-[13px]">Verified</span>
+                        <span class="text-[9px] sm:text-[10px] text-gray-500 mt-0.5">₹14,999</span>
                     </button>
-                    <button id="tab-reset" role="tab" onclick="switchPlan('reset')" class="flex-1 flex flex-col items-center justify-center h-[4.5rem] sm:h-16 rounded-[1.5rem] sm:rounded-full transition-all duration-300 outline-none w-full relative overflow-hidden group">
-                        <span class="font-bold text-[14px] sm:text-sm relative z-10">Reset Protocol</span>
-                        <span class="text-[11px] font-mono font-semibold opacity-90 mt-0.5 tracking-widest relative z-10">₹16,000</span>
+                    <button id="tab-reset" onclick="switchPlan('reset')" class="flex-1 flex flex-col items-center justify-center py-2 sm:py-2.5 rounded-xl transition-all duration-200 outline-none w-1/3">
+                        <span class="font-bold text-[11px] sm:text-[13px]">Reset</span>
+                        <span class="text-[9px] sm:text-[10px] text-gray-500 mt-0.5">₹16,000</span>
                     </button>
                 </div>
                 
-                <!-- Target Audience Warning -->
-                <div class="mt-6 text-center px-2 flex justify-center">
-                    <p id="plan-target" class="inline-flex items-center gap-2 text-[12px] sm:text-[13px] font-bold px-5 py-2.5 rounded-xl border shadow-sm transition-all content-fade">
-                        <!-- Injected via JS -->
-                    </p>
+                <!-- Target Warning -->
+                <div class="mt-5 text-center flex justify-center">
+                    <p id="plan-target" class="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3 py-1.5 rounded-md border transition-all content-fade"></p>
                 </div>
             </div>
 
-            <!-- Dynamic Holographic Cards Container -->
-            <div id="plan-cards" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto mb-10 content-fade">
+            <!-- Dynamic Minimal Cards Container -->
+            <div id="plan-cards" class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto mb-8 content-fade">
                 <!-- Injected via JS -->
             </div>
 
             <!-- Total Line & SUB-CTA Button Container -->
             <div class="max-w-5xl mx-auto text-center content-fade" id="plan-footer">
-                <div class="bg-gray-50 border border-gray-200 rounded-[1.25rem] p-5 mb-8 flex flex-col sm:flex-row items-center justify-center gap-3 shadow-inner">
-                    <i data-lucide="info" class="w-6 h-6 text-wealth-teal flex-shrink-0 animate-pulse"></i>
-                    <p id="plan-total-text" class="text-[13px] sm:text-[14px] font-medium text-gray-700">
-                        <!-- Injected via JS -->
-                    </p>
+                <div class="bg-slate-50 border border-gray-200 rounded-xl p-4 mb-6 flex flex-col sm:flex-row items-center justify-center gap-2">
+                    <i data-lucide="info" class="w-4 h-4 text-wealth-teal flex-shrink-0"></i>
+                    <p id="plan-total-text" class="text-[12px] sm:text-[13px] font-medium text-gray-600"></p>
                 </div>
                 
-                <!-- PLAN SPECIFIC CTA BUTTON BELOW CARDS -->
-                <a href="#" id="plan-cta-btn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-[#050505] hover:bg-[#0a0a0a] text-white font-extrabold text-[14px] md:text-base py-4 px-10 rounded-xl uppercase tracking-widest btn-3d outline-none mx-auto w-full sm:w-auto border border-wealth-teal/50 shadow-[0_0_20px_rgba(13,148,136,0.3)]">
-                    <!-- Injected via JS -->
+                <a href="#" id="plan-cta-btn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20b858] text-white font-bold text-[13px] py-3.5 px-6 rounded-xl uppercase btn-sleek shadow-md mx-auto w-full sm:w-auto">
                 </a>
             </div>
         </section>
 
         <!-- Dynamic 90-Day Chain -->
-        <section class="py-16 md:py-24 border-t border-gray-200">
-            <div class="text-center mb-14 md:mb-20 reveal">
-                <h2 class="font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-elite-black mb-3">The 90-Day Masterplan</h2>
-                <p class="text-gray-500 text-[14px] md:text-base font-medium max-w-2xl mx-auto px-2">A transparent, step-by-step blueprint of your financial recovery.</p>
+        <section class="py-12 md:py-20 border-t border-gray-100 mt-8">
+            <div class="text-center mb-10 reveal">
+                <h2 class="font-extrabold text-2xl md:text-3xl tracking-tight text-elite-black mb-2">The 90-Day Masterplan</h2>
+                <p class="text-gray-500 text-[13px] md:text-[14px]">Step-by-step blueprint of your financial recovery.</p>
             </div>
             
-            <div class="max-w-3xl mx-auto relative content-fade" id="plan-steps">
+            <div class="max-w-2xl mx-auto relative content-fade" id="plan-steps">
                 <!-- Injected via JS -->
-            </div>
-        </section>
-
-        <!-- DETAILED FAQs (9 Items) -->
-        <section class="py-16 md:py-24 border-t border-gray-200">
-            <div class="text-center mb-12 md:mb-16 reveal">
-                <h2 class="font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-elite-black mb-3">Absolute Clarity</h2>
-                <p class="text-gray-500 text-[14px] md:text-base font-medium">Every detail explained. Zero hidden terms.</p>
-            </div>
-            <div class="max-w-3xl mx-auto space-y-4 px-2 reveal delay-100">
-                
-                <!-- FAQ 1 -->
-                <div class="bg-white rounded-[1.25rem] overflow-hidden cursor-pointer faq-item border border-gray-200 shadow-sm transition hover:border-wealth-teal hover:shadow-md card-3d" onclick="this.classList.toggle('faq-open')">
-                    <div class="p-5 md:p-6 flex justify-between items-center font-bold text-[14px] md:text-base text-elite-black">
-                        Which protocol is exactly right for me?
-                        <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
-                    </div>
-                    <div class="faq-content bg-gray-50 px-5 md:px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-gray-100">
-                        <p class="py-5 leading-relaxed">
-                            <strong>Standard (₹34,999):</strong> For individuals with 0 or -1 CIBIL and no formal income proof (like salary slips). We use the ₹20k RD strategy to build initial banking trust.<br><br>
-                            <strong>Verified (₹14,999):</strong> For individuals with 0 or -1 CIBIL who *have* verifiable salary or business bank statements. No RD needed.<br><br>
-                            <strong>Reset (₹16,000):</strong> For individuals with existing bad/negative CIBIL scores (defaults, late payments) that require our legal team to dispute and clean up records.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ 2 -->
-                <div class="bg-white rounded-[1.25rem] overflow-hidden cursor-pointer faq-item border border-gray-200 shadow-sm transition hover:border-wealth-teal hover:shadow-md card-3d" onclick="this.classList.toggle('faq-open')">
-                    <div class="p-5 md:p-6 flex justify-between items-center font-bold text-[14px] md:text-base text-elite-black">
-                        Is my Capital (₹10k Limit or ₹20k RD) safe? Who holds it?
-                        <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
-                    </div>
-                    <div class="faq-content bg-gray-50 px-5 md:px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-gray-100">
-                        <p class="py-5 leading-relaxed">Yes, 100% safe. Homnivas Finance does NOT hold your limit or deposit capital. It is transferred directly into an account opened in your name with an RBI-regulated Tier-1 banking partner. It remains entirely your personal asset.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 3 -->
-                <div class="bg-white rounded-[1.25rem] overflow-hidden cursor-pointer faq-item border border-gray-200 shadow-sm transition hover:border-wealth-teal hover:shadow-md card-3d" onclick="this.classList.toggle('faq-open')">
-                    <div class="p-5 md:p-6 flex justify-between items-center font-bold text-[14px] md:text-base text-elite-black">
-                        Is the final ₹5 Lakh Personal Loan guaranteed?
-                        <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
-                    </div>
-                    <div class="faq-content bg-gray-50 px-5 md:px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-gray-100">
-                        <p class="py-5 leading-relaxed">If your profile hits the 750+ target score and you manage your credit limit flawlessly for 90 days without defaulting, you become highly pre-approved in our partner banks' systems. Final loan sanctions are subject strictly to the partner bank's underwriting policies.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 4 -->
-                <div class="bg-white rounded-[1.25rem] overflow-hidden cursor-pointer faq-item border border-gray-200 shadow-sm transition hover:border-wealth-teal hover:shadow-md card-3d" onclick="this.classList.toggle('faq-open')">
-                    <div class="p-5 md:p-6 flex justify-between items-center font-bold text-[14px] md:text-base text-elite-black">
-                        Are there any hidden or subsequent charges?
-                        <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
-                    </div>
-                    <div class="faq-content bg-gray-50 px-5 md:px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-gray-100">
-                        <p class="py-5 leading-relaxed">Absolutely not. The Legal & Advisory Retainer fee covers the entire 90-day operation. We do not bill you further for dispute resolutions, RM support, or final loan processing.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 5 -->
-                <div class="bg-white rounded-[1.25rem] overflow-hidden cursor-pointer faq-item border border-gray-200 shadow-sm transition hover:border-wealth-teal hover:shadow-md card-3d" onclick="this.classList.toggle('faq-open')">
-                    <div class="p-5 md:p-6 flex justify-between items-center font-bold text-[14px] md:text-base text-elite-black">
-                        What happens if I miss my monthly card payment?
-                        <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
-                    </div>
-                    <div class="faq-content bg-gray-50 px-5 md:px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-gray-100">
-                        <p class="py-5 leading-relaxed">The entire 90-day protocol relies on generating a flawless repayment track record. Missing a payment or paying late will severely damage the incubation process and result in the rejection of your final loan. You must pay strictly before due dates.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 6 -->
-                <div class="bg-white rounded-[1.25rem] overflow-hidden cursor-pointer faq-item border border-gray-200 shadow-sm transition hover:border-wealth-teal hover:shadow-md card-3d" onclick="this.classList.toggle('faq-open')">
-                    <div class="p-5 md:p-6 flex justify-between items-center font-bold text-[14px] md:text-base text-elite-black">
-                        Can I apply for other apps/loans during these 90 days?
-                        <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
-                    </div>
-                    <div class="faq-content bg-gray-50 px-5 md:px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-gray-100">
-                        <p class="py-5 leading-relaxed"><strong class="text-red-600">Strictly NO.</strong> Applying for other loans triggers a "Hard Inquiry" on your CIBIL profile. Multiple hard inquiries make you look desperate for credit and will crash your score instantly. You must not apply anywhere else.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 7 -->
-                <div class="bg-white rounded-[1.25rem] overflow-hidden cursor-pointer faq-item border border-gray-200 shadow-sm transition hover:border-wealth-teal hover:shadow-md card-3d" onclick="this.classList.toggle('faq-open')">
-                    <div class="p-5 md:p-6 flex justify-between items-center font-bold text-[14px] md:text-base text-elite-black">
-                        How does the Reset Protocol actually remove defaults?
-                        <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
-                    </div>
-                    <div class="faq-content bg-gray-50 px-5 md:px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-gray-100">
-                        <p class="py-5 leading-relaxed">Our legal team acts under the Credit Information Companies Act. We file targeted disputes with bureaus to challenge inaccuracies. By law, if the creditor cannot verify the data within 30 days, the bureau must remove the negative mark.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 8 -->
-                <div class="bg-white rounded-[1.25rem] overflow-hidden cursor-pointer faq-item border border-gray-200 shadow-sm transition hover:border-wealth-teal hover:shadow-md card-3d" onclick="this.classList.toggle('faq-open')">
-                    <div class="p-5 md:p-6 flex justify-between items-center font-bold text-[14px] md:text-base text-elite-black">
-                        When will I receive my Usable Credit Card?
-                        <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
-                    </div>
-                    <div class="faq-content bg-gray-50 px-5 md:px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-gray-100">
-                        <p class="py-5 leading-relaxed">Once your capital allocation and digital KYC are successfully verified, your account is generated instantly. The physical credit card is then dispatched by the banking partner and generally arrives at your registered address within 5 to 7 working days.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 9 -->
-                <div class="bg-white rounded-[1.25rem] overflow-hidden cursor-pointer faq-item border border-gray-200 shadow-sm transition hover:border-wealth-teal hover:shadow-md card-3d" onclick="this.classList.toggle('faq-open')">
-                    <div class="p-5 md:p-6 flex justify-between items-center font-bold text-[14px] md:text-base text-elite-black">
-                        What if I don't have PAN or identity documents linked to mobile?
-                        <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
-                    </div>
-                    <div class="faq-content bg-gray-50 px-5 md:px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-gray-100">
-                        <p class="py-5 leading-relaxed">Identity documents linked to your active mobile number and an authentic PAN card are mandatory for the 1-minute digital Video KYC (VKYC) mandated by RBI. You cannot proceed without these documents.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NEW GRAND FINALE: 3D CYBERNETIC MATRIX CTA -->
-        <section class="py-16 md:py-24">
-            <div class="bg-[#050505] rounded-[2.5rem] p-8 sm:p-14 text-center text-white shadow-[0_40px_80px_-20px_rgba(2,44,34,0.8)] relative overflow-hidden border border-wealth-teal/40 reveal">
-                <!-- Abstract glowing orbs -->
-                <div class="absolute -top-32 -right-32 w-96 h-96 bg-wealth-mint/10 rounded-full blur-[100px] animate-pulse-glow"></div>
-                <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-wealth-teal/20 rounded-full blur-[100px]"></div>
-                
-                <div class="w-20 h-20 mx-auto bg-[#0a0a0a] rounded-2xl flex items-center justify-center shadow-[0_10px_40px_rgba(52,211,153,0.3)] border border-wealth-mint/50 mb-8 relative z-10 animate-float">
-                    <i data-lucide="fingerprint" class="w-10 h-10 text-wealth-mint"></i>
-                </div>
-                
-                <h2 class="relative z-10 font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tighter mb-5 text-white drop-shadow-lg">Begin Your Evolution.</h2>
-                <p class="relative z-10 text-gray-300 text-[14px] md:text-base font-medium mb-12 max-w-2xl mx-auto opacity-90 leading-relaxed">Our execution team is online. Select your specific protocol below to send an encrypted authorization request directly to our official WhatsApp terminal.</p>
-                
-                <!-- 3 Buttons Cyber-Grid -->
-                <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                    
-                    <!-- Standard Cyber Card -->
-                    <a href="https://wa.me/919836196650?text=Hello%20Homnivas%20Team%2C%20I%20agree%20to%20start%20the%20journey%20and%20initiate%20my%20Genesis%20Standard%20Protocol%20(%E2%82%B934%2C999)." target="_blank" class="flex flex-col items-center justify-center bg-[#0a0a0a] hover:bg-[#111] border border-white/10 hover:border-wealth-mint/50 p-8 rounded-3xl transition-all duration-500 card-3d-dark backdrop-blur-sm group relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-t from-wealth-mint/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <span class="text-[11px] font-mono font-bold uppercase tracking-widest text-orange-400 mb-4 block z-10">No CIBIL + No Income</span>
-                        <span class="font-extrabold text-2xl md:text-3xl text-white mb-2 block z-10">Genesis Standard</span>
-                        <span class="text-lg font-semibold text-gray-400 mb-8 block z-10">₹34,999</span>
-                        <div class="mt-auto flex items-center justify-center gap-2 bg-[#25D366] text-white px-6 py-4 rounded-xl font-extrabold text-[14px] shadow-lg uppercase transition-transform group-hover:scale-105 z-10 w-full">
-                            <i data-lucide="message-circle" class="w-5 h-5"></i> Apply Now
-                        </div>
-                    </a>
-                    
-                    <!-- Verified Cyber Card -->
-                    <a href="https://wa.me/919836196650?text=Hello%20Homnivas%20Team%2C%20I%20agree%20to%20start%20the%20journey%20and%20initiate%20my%20Genesis%20Verified%20Protocol%20(%E2%82%B914%2C999)." target="_blank" class="flex flex-col items-center justify-center bg-[#0a0a0a] hover:bg-[#111] border border-white/10 hover:border-wealth-mint/50 p-8 rounded-3xl transition-all duration-500 card-3d-dark backdrop-blur-sm group relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-t from-wealth-mint/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <span class="text-[11px] font-mono font-bold uppercase tracking-widest text-emerald-400 mb-4 block z-10">No CIBIL + Has Income</span>
-                        <span class="font-extrabold text-2xl md:text-3xl text-white mb-2 block z-10">Genesis Verified</span>
-                        <span class="text-lg font-semibold text-gray-400 mb-8 block z-10">₹14,999</span>
-                        <div class="mt-auto flex items-center justify-center gap-2 bg-[#25D366] text-white px-6 py-4 rounded-xl font-extrabold text-[14px] shadow-lg uppercase transition-transform group-hover:scale-105 z-10 w-full">
-                            <i data-lucide="message-circle" class="w-5 h-5"></i> Apply Now
-                        </div>
-                    </a>
-                    
-                    <!-- Reset Cyber Card -->
-                    <a href="https://wa.me/919836196650?text=Hello%20Homnivas%20Team%2C%20I%20agree%20to%20start%20the%20journey%20and%20initiate%20my%20CIBIL%20Reset%20Protocol%20(%E2%82%B916%2C000)." target="_blank" class="flex flex-col items-center justify-center bg-[#0a0a0a] hover:bg-[#111] border border-white/10 hover:border-wealth-mint/50 p-8 rounded-3xl transition-all duration-500 card-3d-dark backdrop-blur-sm group relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-t from-wealth-mint/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <span class="text-[11px] font-mono font-bold uppercase tracking-widest text-red-400 mb-4 block z-10">Bad/Negative CIBIL</span>
-                        <span class="font-extrabold text-2xl md:text-3xl text-white mb-2 block z-10">Reset Protocol</span>
-                        <span class="text-lg font-semibold text-gray-400 mb-8 block z-10">₹16,000</span>
-                        <div class="mt-auto flex items-center justify-center gap-2 bg-[#25D366] text-white px-6 py-4 rounded-xl font-extrabold text-[14px] shadow-lg uppercase transition-transform group-hover:scale-105 z-10 w-full">
-                            <i data-lucide="message-circle" class="w-5 h-5"></i> Apply Now
-                        </div>
-                    </a>
-
-                </div>
             </div>
         </section>
     </main>
 
+    <!-- DETAILED FAQs (9 Items) -->
+    <section class="py-12 md:py-20 bg-slate-50 border-y border-gray-200">
+        <div class="text-center mb-10 reveal">
+            <h2 class="font-extrabold text-2xl md:text-3xl tracking-tight text-elite-black mb-2">Absolute Clarity</h2>
+            <p class="text-gray-500 text-[13px] md:text-[14px]">Every detail explained. Zero hidden terms.</p>
+        </div>
+        <div class="max-w-3xl mx-auto space-y-3 px-4 reveal delay-100">
+            <!-- FAQ 1 -->
+            <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
+                <div class="p-4 flex justify-between items-center font-bold text-[13px] md:text-[14px] text-elite-black">
+                    Which protocol is exactly right for me?
+                    <i data-lucide="chevron-down" class="w-4 h-4 faq-icon transition-transform"></i>
+                </div>
+                <div class="faq-content bg-slate-50 px-4 text-[12px] md:text-[13px] text-gray-600 font-medium border-t border-gray-100">
+                    <p class="py-4 leading-relaxed">
+                        <strong>Standard (₹34,999):</strong> For 0/-1 CIBIL without formal income proof. Uses ₹20k RD strategy.<br><br>
+                        <strong>Verified (₹14,999):</strong> For 0/-1 CIBIL with verifiable salary/business statements. No RD needed.<br><br>
+                        <strong>Reset (₹16,000):</strong> For bad/negative CIBIL scores that require our legal team to dispute records.
+                    </p>
+                </div>
+            </div>
+            <!-- FAQ 2 -->
+            <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
+                <div class="p-4 flex justify-between items-center font-bold text-[13px] md:text-[14px] text-elite-black">
+                    Is my Capital (₹10k Limit or ₹20k RD) safe? Who holds it?
+                    <i data-lucide="chevron-down" class="w-4 h-4 faq-icon transition-transform"></i>
+                </div>
+                <div class="faq-content bg-slate-50 px-4 text-[12px] md:text-[13px] text-gray-600 font-medium border-t border-gray-100">
+                    <p class="py-4 leading-relaxed">Yes, 100% safe. It is transferred directly into an account opened in your name with an RBI-regulated banking partner. It remains entirely your personal asset.</p>
+                </div>
+            </div>
+            <!-- FAQ 3 -->
+            <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
+                <div class="p-4 flex justify-between items-center font-bold text-[13px] md:text-[14px] text-elite-black">
+                    Is the final ₹5 Lakh Personal Loan guaranteed?
+                    <i data-lucide="chevron-down" class="w-4 h-4 faq-icon transition-transform"></i>
+                </div>
+                <div class="faq-content bg-slate-50 px-4 text-[12px] md:text-[13px] text-gray-600 font-medium border-t border-gray-100">
+                    <p class="py-4 leading-relaxed">If your profile hits 750+ and you manage credit flawlessly for 90 days, you become pre-approved in bank systems. Final sanctions are subject to bank underwriting policies.</p>
+                </div>
+            </div>
+            <!-- FAQ 4 -->
+            <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
+                <div class="p-4 flex justify-between items-center font-bold text-[13px] md:text-[14px] text-elite-black">
+                    Are there any hidden or subsequent charges?
+                    <i data-lucide="chevron-down" class="w-4 h-4 faq-icon transition-transform"></i>
+                </div>
+                <div class="faq-content bg-slate-50 px-4 text-[12px] md:text-[13px] text-gray-600 font-medium border-t border-gray-100">
+                    <p class="py-4 leading-relaxed">No. The Retainer fee covers the entire 90-day operation. We do not bill you further for disputes or final loan processing.</p>
+                </div>
+            </div>
+            <!-- FAQ 5 -->
+            <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
+                <div class="p-4 flex justify-between items-center font-bold text-[13px] md:text-[14px] text-elite-black">
+                    What happens if I miss my monthly card payment?
+                    <i data-lucide="chevron-down" class="w-4 h-4 faq-icon transition-transform"></i>
+                </div>
+                <div class="faq-content bg-slate-50 px-4 text-[12px] md:text-[13px] text-gray-600 font-medium border-t border-gray-100">
+                    <p class="py-4 leading-relaxed">Missing a payment will severely damage the incubation process and result in the rejection of your final loan. You must pay strictly before due dates.</p>
+                </div>
+            </div>
+            <!-- FAQ 6 -->
+            <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
+                <div class="p-4 flex justify-between items-center font-bold text-[13px] md:text-[14px] text-elite-black">
+                    Can I apply for other apps/loans during these 90 days?
+                    <i data-lucide="chevron-down" class="w-4 h-4 faq-icon transition-transform"></i>
+                </div>
+                <div class="faq-content bg-slate-50 px-4 text-[12px] md:text-[13px] text-gray-600 font-medium border-t border-gray-100">
+                    <p class="py-4 leading-relaxed"><strong class="text-red-600">Strictly NO.</strong> Applying for other loans triggers a "Hard Inquiry" and will crash your score instantly. You must not apply anywhere else.</p>
+                </div>
+            </div>
+            <!-- FAQ 7 -->
+            <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
+                <div class="p-4 flex justify-between items-center font-bold text-[13px] md:text-[14px] text-elite-black">
+                    How does the Reset Protocol actually remove defaults?
+                    <i data-lucide="chevron-down" class="w-4 h-4 faq-icon transition-transform"></i>
+                </div>
+                <div class="faq-content bg-slate-50 px-4 text-[12px] md:text-[13px] text-gray-600 font-medium border-t border-gray-100">
+                    <p class="py-4 leading-relaxed">We act under the CIC Act, filing targeted disputes to challenge inaccuracies. If creditors cannot verify the data within 30 days, bureaus must remove the mark.</p>
+                </div>
+            </div>
+            <!-- FAQ 8 -->
+            <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
+                <div class="p-4 flex justify-between items-center font-bold text-[13px] md:text-[14px] text-elite-black">
+                    When will I receive my Usable Credit Card?
+                    <i data-lucide="chevron-down" class="w-4 h-4 faq-icon transition-transform"></i>
+                </div>
+                <div class="faq-content bg-slate-50 px-4 text-[12px] md:text-[13px] text-gray-600 font-medium border-t border-gray-100">
+                    <p class="py-4 leading-relaxed">Once capital and KYC are verified, the physical credit card is dispatched by the banking partner and arrives within 5 to 7 working days.</p>
+                </div>
+            </div>
+            <!-- FAQ 9 -->
+            <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
+                <div class="p-4 flex justify-between items-center font-bold text-[13px] md:text-[14px] text-elite-black">
+                    What if I don't have PAN or identity documents linked to mobile?
+                    <i data-lucide="chevron-down" class="w-4 h-4 faq-icon transition-transform"></i>
+                </div>
+                <div class="faq-content bg-slate-50 px-4 text-[12px] md:text-[13px] text-gray-600 font-medium border-t border-gray-100">
+                    <p class="py-4 leading-relaxed">Aadhaar linked to your mobile number and an authentic PAN card are mandatory for the RBI-mandated Video KYC. You cannot proceed without these.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SLEEK FINAL CTA GRID -->
+    <section class="py-12 md:py-20 max-w-7xl mx-auto px-4 md:px-8">
+        <div class="bg-elite-black rounded-3xl p-8 md:p-12 text-center text-white shadow-xl relative overflow-hidden reveal">
+            <h2 class="font-extrabold text-3xl md:text-4xl tracking-tight mb-3">Begin Your Evolution.</h2>
+            <p class="text-gray-400 text-[13px] md:text-[14px] font-medium mb-10 max-w-xl mx-auto">Select your protocol below to send an encrypted authorization request directly to our official WhatsApp terminal.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                <!-- CTA 1 -->
+                <a href="https://wa.me/919836196650?text=Hello%20Homnivas%20Team%2C%20I%20agree%20to%20start%20the%20journey%20and%20initiate%20my%20Genesis%20Standard%20Protocol%20(%E2%82%B934%2C999)." target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/10 p-6 rounded-2xl transition-all duration-300 flex flex-col items-center btn-sleek">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-orange-400 mb-2">No CIBIL + No Income</span>
+                    <span class="font-bold text-lg text-white mb-1">Genesis Standard</span>
+                    <span class="text-xs text-gray-400 mb-4">₹34,999</span>
+                    <div class="mt-auto bg-[#25D366] text-white px-5 py-2.5 rounded-lg font-bold text-[12px] w-full flex justify-center items-center gap-2">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Apply Now
+                    </div>
+                </a>
+                
+                <!-- CTA 2 -->
+                <a href="https://wa.me/919836196650?text=Hello%20Homnivas%20Team%2C%20I%20agree%20to%20start%20the%20journey%20and%20initiate%20my%20Genesis%20Verified%20Protocol%20(%E2%82%B914%2C999)." target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/10 p-6 rounded-2xl transition-all duration-300 flex flex-col items-center btn-sleek">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-400 mb-2">No CIBIL + Has Income</span>
+                    <span class="font-bold text-lg text-white mb-1">Genesis Verified</span>
+                    <span class="text-xs text-gray-400 mb-4">₹14,999</span>
+                    <div class="mt-auto bg-[#25D366] text-white px-5 py-2.5 rounded-lg font-bold text-[12px] w-full flex justify-center items-center gap-2">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Apply Now
+                    </div>
+                </a>
+                
+                <!-- CTA 3 -->
+                <a href="https://wa.me/919836196650?text=Hello%20Homnivas%20Team%2C%20I%20agree%20to%20start%20the%20journey%20and%20initiate%20my%20CIBIL%20Reset%20Protocol%20(%E2%82%B916%2C000)." target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/10 p-6 rounded-2xl transition-all duration-300 flex flex-col items-center btn-sleek">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-red-400 mb-2">Bad/Negative CIBIL</span>
+                    <span class="font-bold text-lg text-white mb-1">Reset Protocol</span>
+                    <span class="text-xs text-gray-400 mb-4">₹16,000</span>
+                    <div class="mt-auto bg-[#25D366] text-white px-5 py-2.5 rounded-lg font-bold text-[12px] w-full flex justify-center items-center gap-2">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Apply Now
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
-    <footer class="bg-[#050505] border-t border-wealth-teal/20 pt-16 pb-12 px-5 md:px-8 relative overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full md:w-1/2 h-1/2 bg-wealth-teal/10 blur-[80px] pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto relative z-10 flex flex-col items-center">
-            <div class="flex items-center gap-2.5 mb-4">
-                <svg class="w-6 h-6 text-wealth-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                </svg>
-                <div class="font-extrabold text-2xl tracking-tighter text-white">Homnivas<span class="text-wealth-mint">.space</span></div>
+    <footer class="bg-white border-t border-gray-200 pt-12 pb-10 px-5 md:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
+            <div class="flex items-center gap-2 mb-4">
+                <div class="w-5 h-5 bg-elite-black rounded flex items-center justify-center text-white">
+                    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                </div>
+                <div class="font-bold text-lg tracking-tight text-elite-black">Homnivas<span class="text-wealth-teal">.space</span></div>
             </div>
             
-            <p class="text-wealth-teal font-mono font-bold text-[10px] uppercase tracking-widest mb-8">Your Space. Our Care.</p>
+            <p class="text-gray-400 font-bold text-[9px] uppercase tracking-widest mb-6">Your Space. Our Care.</p>
 
-            <div class="flex flex-wrap justify-center gap-4 mb-10">
-                <div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">
-                    <i data-lucide="shield-check" class="w-4 h-4 text-wealth-mint"></i> RBI Compliant
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-50 border border-gray-200 text-gray-500 text-[9px] font-bold uppercase tracking-wider">
+                    <i data-lucide="shield-check" class="w-3 h-3 text-wealth-teal"></i> RBI Compliant
                 </div>
-                <div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">
-                    <i data-lucide="lock" class="w-4 h-4 text-wealth-mint"></i> AES-256 SSL
+                <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-50 border border-gray-200 text-gray-500 text-[9px] font-bold uppercase tracking-wider">
+                    <i data-lucide="lock" class="w-3 h-3 text-wealth-teal"></i> AES-256 SSL
                 </div>
             </div>
             
-            <div class="flex flex-wrap justify-center gap-6 mb-8 text-[11px] sm:text-[12px] font-bold text-gray-400 uppercase tracking-widest">
-                <button onclick="openModal('privacy')" class="hover:text-wealth-mint transition duration-300 outline-none">Privacy Policy</button>
-                <button onclick="openModal('terms')" class="hover:text-wealth-mint transition duration-300 outline-none">Terms & Conditions</button>
-                <button onclick="openModal('contact')" class="hover:text-wealth-mint transition duration-300 outline-none">Contact Us</button>
+            <div class="flex flex-wrap justify-center gap-4 sm:gap-6 mb-6 text-[10px] sm:text-[11px] font-semibold text-gray-500 uppercase tracking-widest">
+                <button onclick="openModal('privacy')" class="hover:text-elite-black transition outline-none">Privacy Policy</button>
+                <button onclick="openModal('terms')" class="hover:text-elite-black transition outline-none">Terms & Conditions</button>
+                <button onclick="openModal('contact')" class="hover:text-elite-black transition outline-none">Contact Us</button>
             </div>
 
-            <p class="text-[10px] md:text-[11px] text-gray-600 font-medium mb-6 max-w-xl mx-auto leading-relaxed text-center px-4">
+            <p class="text-[10px] text-gray-400 font-medium mb-4 max-w-lg text-center leading-relaxed">
                 Homnivas Finance operates strictly as a technology and advisory infrastructure. Card issuance, deposit accounts, and loan underwriting are subject to the exclusive mandate of our RBI-licensed banking partners.
             </p>
             
-            <div class="text-[9px] md:text-[10px] font-mono font-bold text-gray-700 uppercase tracking-widest text-center">
-                &copy; 2026 Homnivas.space Financial Infrastructure
+            <div class="text-[9px] font-bold text-gray-400 uppercase tracking-widest text-center">
+                &copy; 2026 Homnivas.space
             </div>
         </div>
     </footer>
 
     <!-- DETAILED LEGAL MODALS -->
-    <div id="legalModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/90 backdrop-blur-xl transition-opacity duration-300 opacity-0">
-        <div class="bg-[#050505] border border-wealth-teal/40 w-full max-w-3xl rounded-[2rem] p-6 sm:p-10 max-h-[85vh] flex flex-col relative shadow-[0_0_50px_rgba(52,211,153,0.2)] transform transition-transform duration-300 scale-95" id="modalContainer">
-            <button onclick="closeModal()" class="absolute top-5 right-5 text-gray-500 hover:text-white transition outline-none bg-white/5 p-2 rounded-full hover:bg-white/10 z-20">
-                <i data-lucide="x" class="w-5 h-5"></i>
+    <div id="legalModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+        <div class="bg-white w-full max-w-2xl rounded-2xl p-6 sm:p-8 max-h-[85vh] flex flex-col relative shadow-2xl transform transition-transform duration-300 scale-95" id="modalContainer">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-elite-black transition outline-none bg-gray-50 p-2 rounded-full hover:bg-gray-100 z-20">
+                <i data-lucide="x" class="w-4 h-4"></i>
             </button>
-            <h2 id="modalTitle" class="font-extrabold text-2xl md:text-3xl tracking-tighter mb-6 text-white border-b border-white/10 pb-4 pr-8"></h2>
-            <div id="modalContent" class="modal-scroll overflow-y-auto text-gray-300 text-[13px] md:text-[14px] leading-relaxed pr-4"></div>
+            <h2 id="modalTitle" class="font-extrabold text-xl md:text-2xl tracking-tight mb-4 text-elite-black border-b border-gray-100 pb-3 pr-8"></h2>
+            <div id="modalContent" class="modal-scroll overflow-y-auto text-gray-600 text-[13px] leading-relaxed pr-2"></div>
         </div>
     </div>
 
-    <!-- TOAST NOTIFICATION (50 Data Points restored) -->
-    <div id="socialProofToast" class="fixed bottom-6 left-4 right-20 sm:right-auto sm:left-8 z-50 transform translate-y-24 opacity-0 transition-all duration-700 ease-out pointer-events-none max-w-[280px] sm:max-w-sm">
-        <div class="bg-[#0a0a0a]/95 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] rounded-2xl p-4 sm:p-5 flex items-center gap-4 border border-wealth-teal/40">
-            <div class="w-2.5 h-2.5 rounded-full bg-wealth-mint animate-pulse-glow flex-shrink-0 shadow-[0_0_10px_rgba(52,211,153,0.8)]"></div>
+    <!-- TOAST NOTIFICATION (Light Mode - 50 Data Points) -->
+    <div id="socialProofToast" class="fixed bottom-6 left-4 right-20 sm:right-auto sm:left-8 z-50 transform translate-y-20 opacity-0 transition-all duration-500 ease-out pointer-events-none max-w-[260px] sm:max-w-xs">
+        <div class="bg-white shadow-xl rounded-xl p-3.5 sm:p-4 flex items-center gap-3 border border-gray-100">
+            <div class="w-2 h-2 rounded-full bg-wealth-mint animate-pulse flex-shrink-0"></div>
             <div class="flex-1 min-w-0">
-                <p class="text-[11px] sm:text-[13px] text-gray-300 font-medium leading-tight">
-                    <span id="toastUser" class="text-white font-extrabold"></span> <span id="toastAction"></span>
+                <p class="text-[10px] sm:text-[11px] text-gray-500 font-medium leading-tight">
+                    <span id="toastUser" class="text-elite-black font-bold"></span> <span id="toastAction"></span>
                 </p>
-                <p id="toastTime" class="text-[9px] sm:text-[10px] font-mono text-wealth-teal font-bold mt-1.5 uppercase tracking-widest"></p>
+                <p id="toastTime" class="text-[8px] sm:text-[9px] text-wealth-teal font-bold mt-1 uppercase tracking-widest"></p>
             </div>
         </div>
     </div>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/919836196650" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-[90] bg-[#25D366] text-white p-4 sm:p-5 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300 flex items-center justify-center group outline-none">
-        <i data-lucide="message-circle" class="w-7 h-7 fill-current"></i>
+    <a href="https://wa.me/919836196650" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-4 sm:bottom-6 sm:right-6 z-[90] bg-[#25D366] text-white p-3.5 rounded-full shadow-lg hover:scale-105 transition-transform flex items-center justify-center group outline-none">
+        <i data-lucide="message-circle" class="w-6 h-6 fill-current"></i>
         <span class="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-30 animate-ping"></span>
     </a>
 
     <!-- SCRIPTS -->
     <script>
-        // Init Icons
         lucide.createIcons();
 
-        // --- SCROLL REVEAL LOGIC ---
+        // --- SCROLL REVEAL ---
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 50; 
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
+                if (elementTop < windowHeight - 30) reveals[i].classList.add("active");
             }
         }
         window.addEventListener("scroll", reveal);
         reveal();
 
-        // --- NATIVE VIDEO PLAYER LOGIC ---
+        // --- VIDEO LOGIC ---
         function togglePlay() {
             const video = document.getElementById('heroVideo');
             const container = document.getElementById('heroVideoContainer');
-            if (video.paused) {
-                video.play();
-                container.classList.add('is-playing');
-            } else {
-                video.pause();
-                container.classList.remove('is-playing');
-            }
+            if (video.paused) { video.play(); container.classList.add('is-playing'); } 
+            else { video.pause(); container.classList.remove('is-playing'); }
         }
-        document.getElementById('heroVideo').addEventListener('ended', function() {
+        document.getElementById('heroVideo').addEventListener('ended', () => {
             document.getElementById('heroVideoContainer').classList.remove('is-playing');
         });
 
-        // --- DYNAMIC PLAN DATA (THE BRAIN) ---
+        // --- PLAN DATA ---
         const planData = {
             standard: {
-                id: 'standard',
-                name: 'Genesis Standard',
-                price: '₹34,999',
-                target: '<i data-lucide="target" class="w-4 h-4"></i> Target: 0/-1 CIBIL. No Income Proof. (Students/Freelancers)',
-                targetColor: 'bg-orange-500/10 text-orange-400 border-orange-500/30',
+                id: 'standard', name: 'Genesis Standard', price: '₹34,999',
+                target: '<i data-lucide="target" class="w-3.5 h-3.5"></i> 0/-1 CIBIL. No Income Proof.',
+                targetColor: 'bg-orange-50 text-orange-700 border-orange-200',
                 totalText: '₹30,000 remains 100% your personal asset locked in Premium Banking & RD.',
                 ctaBtnText: 'Start Genesis Standard (₹34,999)',
                 waText: 'Hello Homnivas Team, I agree to start the journey and initiate my Genesis Standard Protocol (₹34,999).',
                 gridCols: 'md:grid-cols-3',
                 cards: [
-                    { price: '₹4,999', title: 'Legal & Doc Retainer', desc: 'Covers 90-day RM support, profile generation, and final ₹5 Lakh processing.', icon: 'scale' },
-                    { price: '₹10,000', title: 'Premium Account', desc: 'Deposited directly to establish a high-net-worth banking relationship.', icon: 'landmark' },
-                    { price: '₹20,000', title: 'Recurring Deposit (RD)', desc: 'Creates instant asset-backed trust to trigger a secure credit line.', icon: 'piggy-bank' }
+                    { price: '₹4,999', title: 'Legal Retainer', desc: 'Covers 90-day RM support and final ₹5 Lakh processing.', icon: 'scale' },
+                    { price: '₹10,000', title: 'Premium Account', desc: 'Deposited directly to establish a banking relationship.', icon: 'landmark' },
+                    { price: '₹20,000', title: 'Recurring Deposit', desc: 'Creates asset-backed trust for a secure credit line.', icon: 'piggy-bank' }
                 ],
                 steps: [
-                    { day: 'Day 1-30', title: '1. Account Setup & Capital', icon: 'wallet', you: 'Sign the digital agreement, complete 1-min selfie KYC, and deploy the ₹34,999 capital.', we: 'We open your premium account and RD with our partner bank, triggering your secure credit line.' },
-                    { day: 'Day 31-89', title: '2. Building Reported History', icon: 'trending-up', you: 'Make small transactions on your secured line and pay strictly before the due date.', we: 'Your dedicated RM guides your payments, which report to bureaus, rocketing your score from 0 to 750+.' },
-                    { day: 'Day 90+', title: '3. Final Loan Disbursement', icon: 'check-circle', you: 'Provide your final updated bank statement and select the loan amount you require.', we: 'Your profile is now "Excellent". We submit your file for an unsecured Personal Loan of up to ₹5 Lakh.' }
+                    { day: 'Day 1-30', title: '1. Account Setup', icon: 'wallet', you: 'Sign agreement, complete KYC, and deploy ₹34,999.', we: 'We open your premium account and RD, triggering a credit line.' },
+                    { day: 'Day 31-89', title: '2. History Building', icon: 'trending-up', you: 'Make small transactions and pay before the due date.', we: 'RM guides payments, rocketing score from 0 to 750+.' },
+                    { day: 'Day 90+', title: '3. Final Loan', icon: 'check-circle', you: 'Provide final bank statement.', we: 'We submit file for unsecured Personal Loan up to ₹5 Lakh.' }
                 ]
             },
             verified: {
-                id: 'verified',
-                name: 'Genesis Verified',
-                price: '₹14,999',
-                target: '<i data-lucide="target" class="w-4 h-4"></i> Target: 0/-1 CIBIL. Has Income/Salary Proof.',
-                targetColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
+                id: 'verified', name: 'Genesis Verified', price: '₹14,999',
+                target: '<i data-lucide="target" class="w-3.5 h-3.5"></i> 0/-1 CIBIL. Has Salary Proof.',
+                targetColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
                 totalText: '₹10,000 is directly allocated as your usable card limit. No RD required.',
                 ctaBtnText: 'Start Genesis Verified (₹14,999)',
                 waText: 'Hello Homnivas Team, I agree to start the journey and initiate my Genesis Verified Protocol (₹14,999).',
-                gridCols: 'md:grid-cols-2 max-w-4xl',
+                gridCols: 'md:grid-cols-2 max-w-3xl',
                 cards: [
-                    { price: '₹4,999', title: 'Legal & Documentation', desc: 'Covers backend file processing, CIBIL profile generation, and final loan processing.', icon: 'scale' },
-                    { price: '₹10,000', title: 'Usable Card Limit', desc: 'Capital allocated to your new credit card account. Fully usable for daily needs.', icon: 'credit-card' }
+                    { price: '₹4,999', title: 'Legal & Doc Fee', desc: 'Covers backend file processing and final loan processing.', icon: 'scale' },
+                    { price: '₹10,000', title: 'Card Limit', desc: 'Capital allocated to your new credit card. Fully usable.', icon: 'credit-card' }
                 ],
                 steps: [
-                    { day: 'Day 1-30', title: '1. Account Setup & Capital', icon: 'wallet', you: 'Sign the agreement, complete KYC, verify your income proof, and deploy ₹14,999.', we: 'We secure your new credit card limit backed by your income verification.' },
-                    { day: 'Day 31-89', title: '2. Building Reported History', icon: 'trending-up', you: 'Use your card for small daily expenses and clear bills strictly before the due date.', we: 'We ensure your fresh repayment history generates a premium 750+ score from scratch.' },
-                    { day: 'Day 90+', title: '3. Final Loan Disbursement', icon: 'check-circle', you: 'Provide your latest salary/business statements.', we: 'We process your "Excellent" profile for a premium unsecured Personal Loan.' }
+                    { day: 'Day 1-30', title: '1. Account Setup', icon: 'wallet', you: 'Sign agreement, verify income, deploy ₹14,999.', we: 'We secure new credit card limit backed by income verification.' },
+                    { day: 'Day 31-89', title: '2. History Building', icon: 'trending-up', you: 'Use card for small expenses and clear bills on time.', we: 'Fresh repayment history generates premium 750+ score.' },
+                    { day: 'Day 90+', title: '3. Final Loan', icon: 'check-circle', you: 'Provide latest salary/business statements.', we: 'Process "Excellent" profile for premium unsecured Loan.' }
                 ]
             },
             reset: {
-                id: 'reset',
-                name: 'Reset Protocol',
-                price: '₹16,000',
-                target: '<i data-lucide="shield-alert" class="w-4 h-4"></i> Target: Bad/Negative CIBIL. Needs Score Cleanup.',
-                targetColor: 'bg-red-500/10 text-red-400 border-red-500/30',
-                totalText: '₹10,000 becomes your usable card limit. ₹6,000 is the legal cleanup fee.',
+                id: 'reset', name: 'Reset Protocol', price: '₹16,000',
+                target: '<i data-lucide="shield-alert" class="w-3.5 h-3.5"></i> Bad CIBIL. Needs Cleanup.',
+                targetColor: 'bg-red-50 text-red-700 border-red-200',
+                totalText: '₹10,000 is your usable card limit. ₹6,000 is legal cleanup fee.',
                 ctaBtnText: 'Initiate Reset Protocol (₹16,000)',
                 waText: 'Hello Homnivas Team, I agree to start the journey and initiate my CIBIL Reset Protocol (₹16,000).',
-                gridCols: 'md:grid-cols-2 max-w-4xl',
+                gridCols: 'md:grid-cols-2 max-w-3xl',
                 cards: [
-                    { price: '₹6,000', title: 'Legal & Advisory Retainer', desc: 'Non-refundable fee for our legal experts to aggressively dispute negative remarks.', icon: 'scale' },
-                    { price: '₹10,000', title: 'Usable Card Limit', desc: 'Transferred to your new Credit Card account. Fully usable for your lifestyle.', icon: 'credit-card' }
+                    { price: '₹6,000', title: 'Advisory Retainer', desc: 'Non-refundable fee to aggressively dispute negative remarks.', icon: 'scale' },
+                    { price: '₹10,000', title: 'Card Limit', desc: 'Transferred to Credit Card account. Fully usable.', icon: 'credit-card' }
                 ],
                 steps: [
-                    { day: 'Day 1', title: '1. Account Setup & Capital', icon: 'wallet', you: 'Sign the agreement, complete KYC, and transfer the ₹16,000 capital.', we: 'We open your secure account and dispatch your physical credit card.' },
-                    { day: 'Day 8-45', title: '2. The Cleanup Operation', icon: 'shield-alert', you: 'Use your new card and strictly avoid applying for any other loans online.', we: 'Our legal teams officially file disputes to remove old defaults and fake entries.' },
-                    { day: 'Day 46-89', title: '3. The Score Incubation', icon: 'trending-up', you: 'Pay your small credit card bill strictly on time.', we: 'Negative marks are removed while positive history is built, skyrocketing your score.' },
-                    { day: 'Day 90+', title: '4. Final Loan Disbursement', icon: 'check-circle', you: 'Provide your final updated bank statement.', we: 'We leverage our partners to get a ₹2 Lakh to ₹5 Lakh loan sanctioned.' }
+                    { day: 'Day 1', title: '1. Account Setup', icon: 'wallet', you: 'Sign agreement, complete KYC, transfer ₹16,000.', we: 'Open secure account and dispatch physical credit card.' },
+                    { day: 'Day 8-45', title: '2. Cleanup Operation', icon: 'shield-alert', you: 'Use card, strictly avoid applying for other loans.', we: 'Legal teams file disputes to remove defaults.' },
+                    { day: 'Day 46-89', title: '3. Score Incubation', icon: 'trending-up', you: 'Pay small credit card bill strictly on time.', we: 'Negative marks removed, positive history built.' },
+                    { day: 'Day 90+', title: '4. Final Loan', icon: 'check-circle', you: 'Provide final updated bank statement.', we: 'Leverage partners for ₹2 Lakh to ₹5 Lakh loan sanction.' }
                 ]
             }
         };
@@ -685,229 +571,121 @@
         function switchPlan(planId) {
             const plan = planData[planId];
             const baseUrl = "https://wa.me/919836196650?text=";
-            const encodedText = encodeURIComponent(plan.waText);
-            const fullWaUrl = baseUrl + encodedText;
+            const fullWaUrl = baseUrl + encodeURIComponent(plan.waText);
 
-            // 1. Update Tabs UI (Cyber Segmented Control)
+            // 1. Tabs UI (Minimal Active State)
             ['standard', 'verified', 'reset'].forEach(id => {
                 const tab = document.getElementById(`tab-${id}`);
                 if(id === planId) {
-                    tab.className = "flex-1 flex flex-col items-center justify-center h-[4.5rem] sm:h-16 rounded-[1.2rem] sm:rounded-full transition-all duration-300 outline-none w-full tab-active";
+                    tab.className = "flex-1 flex flex-col items-center justify-center py-2 sm:py-2.5 rounded-xl transition-all duration-200 outline-none w-1/3 bg-white shadow-sm border border-gray-200 text-elite-black";
                 } else {
-                    tab.className = "flex-1 flex flex-col items-center justify-center h-[4.5rem] sm:h-16 rounded-[1.2rem] sm:rounded-full transition-all duration-300 outline-none w-full tab-inactive";
+                    tab.className = "flex-1 flex flex-col items-center justify-center py-2 sm:py-2.5 rounded-xl transition-all duration-200 outline-none w-1/3 bg-transparent text-gray-500 hover:text-elite-black border border-transparent";
                 }
             });
 
-            // 2. Update Target Warning
+            // 2. Target Warning
             const targetEl = document.getElementById('plan-target');
-            targetEl.classList.remove('content-fade');
-            void targetEl.offsetWidth; 
+            targetEl.classList.remove('content-fade'); void targetEl.offsetWidth; 
             targetEl.innerHTML = plan.target;
-            targetEl.className = `inline-flex items-center gap-2 text-[12px] sm:text-[13px] font-bold px-5 py-2.5 rounded-xl border shadow-sm transition-all content-fade ${plan.targetColor}`;
+            targetEl.className = `inline-flex items-center gap-1.5 text-[11px] font-semibold px-3 py-1.5 rounded-md border shadow-sm transition-all content-fade ${plan.targetColor}`;
 
-            // 3. Update HOLOGRAPHIC Cards
+            // 3. Update Minimal Cards
             const cardsContainer = document.getElementById('plan-cards');
-            cardsContainer.classList.remove('content-fade');
-            void cardsContainer.offsetWidth;
-            cardsContainer.className = `grid grid-cols-1 ${plan.gridCols} gap-6 md:gap-8 mx-auto mb-10 content-fade`;
+            cardsContainer.classList.remove('content-fade'); void cardsContainer.offsetWidth;
+            cardsContainer.className = `grid grid-cols-1 ${plan.gridCols} gap-4 md:gap-6 mx-auto mb-8 content-fade`;
             
-            cardsContainer.innerHTML = plan.cards.map((card, index) => `
-                <div class="holo-card p-6 sm:p-8">
-                    <div class="scanner"></div>
-                    <div class="flex justify-between items-start mb-6 relative z-10">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-black border border-white/10 flex items-center justify-center shadow-[0_0_15px_rgba(13,148,136,0.3)]">
-                            <i data-lucide="${card.icon}" class="w-6 h-6 text-wealth-mint"></i>
-                        </div>
-                        <span class="text-[10px] font-mono text-wealth-teal uppercase tracking-widest bg-wealth-teal/10 px-2 py-1 rounded border border-wealth-teal/20">Module 0${index + 1}</span>
+            cardsContainer.innerHTML = plan.cards.map(card => `
+                <div class="minimal-card p-5 sm:p-6 text-center flex flex-col items-center">
+                    <div class="w-10 h-10 bg-slate-50 border border-gray-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="${card.icon}" class="w-5 h-5 text-wealth-teal"></i>
                     </div>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-2 relative z-10 tracking-tight">${card.price}</h3>
-                    <h4 class="font-bold text-[13px] sm:text-sm text-wealth-mint mb-4 relative z-10 uppercase tracking-widest">${card.title}</h4>
-                    <div class="w-8 h-[2px] bg-wealth-teal/50 mb-4 relative z-10"></div>
-                    <p class="text-[13px] sm:text-[14px] font-medium relative z-10 leading-relaxed text-gray-400">${card.desc}</p>
+                    <p class="text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-1">Allocation</p>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-elite-black mb-1 tracking-tight">${card.price}</h3>
+                    <h4 class="font-bold text-[13px] text-wealth-teal mb-3">${card.title}</h4>
+                    <p class="text-[12px] font-medium text-gray-500 leading-relaxed">${card.desc}</p>
                 </div>
             `).join('');
 
-            // 4. Update Footer Text & Sub-CTA Button
-            const totalText = document.getElementById('plan-total-text');
-            const ctaBtn = document.getElementById('plan-cta-btn');
+            // 4. Footer CTA
             const footerContainer = document.getElementById('plan-footer');
-            
-            footerContainer.classList.remove('content-fade');
-            void footerContainer.offsetWidth;
-            footerContainer.classList.add('content-fade');
-
-            totalText.innerText = plan.totalText;
-            ctaBtn.innerHTML = `<i data-lucide="message-circle" class="w-5 h-5 mr-1 text-[#25D366]"></i> ${plan.ctaBtnText} <i data-lucide="arrow-right" class="w-5 h-5 ml-1"></i>`;
+            footerContainer.classList.remove('content-fade'); void footerContainer.offsetWidth; footerContainer.classList.add('content-fade');
+            document.getElementById('plan-total-text').innerText = plan.totalText;
+            const ctaBtn = document.getElementById('plan-cta-btn');
+            ctaBtn.innerHTML = `<i data-lucide="message-circle" class="w-4 h-4 mr-1"></i> ${plan.ctaBtnText}`;
             ctaBtn.href = fullWaUrl;
 
-            // 5. Update 90-Day Chain
+            // 5. Steps
             const stepsContainer = document.getElementById('plan-steps');
-            stepsContainer.classList.remove('content-fade');
-            void stepsContainer.offsetWidth;
-            stepsContainer.classList.add('content-fade');
+            stepsContainer.classList.remove('content-fade'); void stepsContainer.offsetWidth; stepsContainer.classList.add('content-fade');
             
-            let stepsHtml = `<div class="absolute left-[22px] md:left-[34px] top-6 bottom-12 w-[2px] bg-wealth-teal/30 rounded-full"></div>`;
-            
+            let stepsHtml = `<div class="absolute left-[20px] md:left-[28px] top-6 bottom-8 w-[2px] bg-gray-100 rounded-full"></div>`;
             stepsHtml += plan.steps.map((step, index) => {
                 const isLast = index === plan.steps.length - 1;
-                const iconColor = isLast ? 'text-white' : 'text-wealth-mint';
-                const circleBg = isLast ? 'bg-wealth-emerald border-wealth-mint shadow-[0_0_20px_rgba(52,211,153,0.4)] animate-pulse-glow' : 'bg-[#0a0a0a] border-wealth-teal shadow-md';
+                const circleBg = isLast ? 'bg-wealth-teal border-white' : 'bg-white border-gray-200';
+                const iconColor = isLast ? 'text-white' : 'text-gray-500';
                 
                 return `
-                <div class="relative flex items-start gap-5 md:gap-8 mb-10 md:mb-12">
-                    <div class="w-12 h-12 md:w-[4.5rem] md:h-[4.5rem] rounded-full border border-wealth-teal/50 flex items-center justify-center flex-shrink-0 z-10 relative ${circleBg}">
-                        <div class="absolute -top-2 -right-4 md:-right-6 bg-elite-black text-white text-[9px] md:text-[10px] font-mono font-bold px-2 py-1 rounded border border-white/10 shadow-lg">${step.day}</div>
-                        <i data-lucide="${step.icon}" class="w-5 h-5 md:w-6 md:h-6 ${iconColor}"></i>
+                <div class="relative flex items-start gap-4 md:gap-6 mb-8">
+                    <div class="w-10 h-10 md:w-14 md:h-14 rounded-full border-[3px] flex items-center justify-center flex-shrink-0 z-10 relative ${circleBg}">
+                        <i data-lucide="${step.icon}" class="w-4 h-4 md:w-5 md:h-5 ${iconColor}"></i>
                     </div>
-                    <div class="pt-0.5 flex-1 bg-white p-6 rounded-[1.5rem] border border-gray-200 shadow-sm transition hover:shadow-md hover:border-wealth-teal/50">
-                        <h3 class="font-extrabold text-xl md:text-2xl text-elite-black mb-4">${step.title}</h3>
-                        <div class="bg-gray-50 p-4 md:p-5 rounded-xl border border-gray-200 mb-4">
-                            <strong class="text-elite-black text-[13px] md:text-[14px] block mb-1">What You Do:</strong>
-                            <p class="text-gray-600 text-[13px] md:text-[14px] leading-relaxed">${step.you}</p>
+                    <div class="pt-0 flex-1 minimal-card p-4 md:p-5 text-left">
+                        <h3 class="font-bold text-[14px] md:text-base text-elite-black mb-3">${step.title}</h3>
+                        <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 mb-3">
+                            <strong class="text-elite-black text-[11px] md:text-[12px] block mb-1">What You Do:</strong>
+                            <p class="text-gray-500 text-[11px] md:text-[12px] leading-relaxed">${step.you}</p>
                         </div>
-                        <div class="p-4 md:p-5 rounded-xl border border-wealth-teal/30 bg-teal-50/50">
-                            <strong class="text-wealth-teal text-[13px] md:text-[14px] block mb-1">What We Do:</strong>
-                            <p class="text-gray-700 font-medium text-[13px] md:text-[14px] leading-relaxed">${step.we}</p>
+                        <div class="p-3 rounded-lg border border-teal-100 bg-teal-50/50">
+                            <strong class="text-wealth-teal text-[11px] md:text-[12px] block mb-1">What We Do:</strong>
+                            <p class="text-gray-600 font-medium text-[11px] md:text-[12px] leading-relaxed">${step.we}</p>
                         </div>
                     </div>
                 </div>`;
             }).join('');
-            
             stepsContainer.innerHTML = stepsHtml;
             lucide.createIcons();
         }
 
-        // --- INIT PAGE ---
-        window.addEventListener('DOMContentLoaded', () => {
-            switchPlan('standard'); 
-        });
+        window.addEventListener('DOMContentLoaded', () => switchPlan('standard'));
 
-        // --- DETAILED VALID LEGAL MODALS LOGIC ---
+        // --- DETAILED MODALS ---
         const legalData = {
             privacy: { 
                 title: "Privacy Policy", 
                 text: `
-                    <div class="space-y-6">
-                        <p>Welcome to Homnivas Finance ("Homnivas.space", "we", "our"). Your privacy and the security of your financial data are our highest priorities. This policy outlines how we collect, process, and protect your information under the applicable laws of India.</p>
-                        
-                        <section>
-                            <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="database" class="w-5 h-5 text-wealth-mint"></i> 1. Information We Collect</h3>
-                            <p class="mb-2">To initiate the Genesis or Reset protocols, we securely collect necessary KYC and financial data, including but not limited to:</p>
-                            <ul class="list-disc pl-5 space-y-1 text-gray-400">
-                                <li>Identity Information: Name, Date of Birth, Government-issued Identity documents (e.g., PAN, and masked identification numbers for verification purposes only).</li>
-                                <li>Contact Information: Email address, Phone number, and Residential address.</li>
-                                <li>Financial Data: Bank statements, income proofs, and existing credit report data (via soft pull authorization).</li>
-                            </ul>
-                        </section>
-
-                        <section>
-                            <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="shield-check" class="w-5 h-5 text-wealth-mint"></i> 2. How We Use Your Data</h3>
-                            <p class="mb-2">Your data is strictly utilized for the following core operations:</p>
-                            <ul class="list-disc pl-5 space-y-1 text-gray-400">
-                                <li>To perform necessary KYC (Know Your Customer) as mandated by the Reserve Bank of India (RBI).</li>
-                                <li>To execute legal disputes with Credit Information Companies (CICs) to rectify your credit score.</li>
-                                <li>To facilitate the opening of premium banking accounts and Recurring Deposits (RD) with our tier-1 banking partners.</li>
-                            </ul>
-                            <p class="mt-2 text-wealth-mint font-semibold">We do not sell, rent, or lease your personal data to any third-party marketing agencies.</p>
-                        </section>
-
-                        <section>
-                            <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="lock" class="w-5 h-5 text-wealth-mint"></i> 3. Data Security & AES-256</h3>
-                            <p>All sensitive information transmitted between your device and our servers is secured using military-grade AES-256 bit SSL encryption. Physical documents (if any) and digital files are stored in highly secure, compliant cloud vaults with restricted, audited employee access.</p>
-                        </section>
-
-                        <section>
-                            <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="landmark" class="w-5 h-5 text-wealth-mint"></i> 4. Partner Sharing</h3>
-                            <p>To provide our services, your data is shared exclusively with RBI-regulated banks and NBFCs for the sole purpose of card issuance and loan underwriting. These partners are bound by strict non-disclosure agreements (NDAs).</p>
-                        </section>
-                    </div>
-                ` 
+                    <div class="space-y-4">
+                        <p>Welcome to Homnivas Finance. Your privacy and financial data security are our highest priorities.</p>
+                        <h3 class="font-bold text-sm text-elite-black mt-4">1. Information We Collect</h3>
+                        <p class="text-gray-500">We collect KYC data (PAN, Aadhaar) and financial data (Bank statements) purely for protocol execution and RBI mandates.</p>
+                        <h3 class="font-bold text-sm text-elite-black mt-4">2. Data Security</h3>
+                        <p class="text-gray-500">All data is secured via AES-256 bit SSL encryption. We do not sell or lease data to third-party marketers.</p>
+                        <h3 class="font-bold text-sm text-elite-black mt-4">3. Partner Sharing</h3>
+                        <p class="text-gray-500">Data is shared exclusively with RBI-regulated banks for card issuance and underwriting.</p>
+                    </div>` 
             },
             terms: { 
                 title: "Terms & Conditions", 
                 text: `
-                    <div class="space-y-6">
-                        <p>By accessing Homnivas.space and enrolling in our Credit Genesis or Reset Protocols, you legally agree to be bound by the following terms. Please read them carefully.</p>
-                        
-                        <section>
-                            <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="file-text" class="w-5 h-5 text-wealth-mint"></i> 1. Scope of Service</h3>
-                            <p>Homnivas Finance acts as a technology infrastructure and legal advisory firm. We specialize in credit profile generation and dispute resolution. We are not a direct lender. All credit limits, deposit accounts, and final personal loans are issued directly by our partner banking institutions.</p>
-                        </section>
-
-                        <section>
-                            <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="credit-card" class="w-5 h-5 text-wealth-mint"></i> 2. Capital Structure & Retainer Fee</h3>
-                            <p class="mb-2">Your total protocol investment (e.g., ₹34,999, ₹14,999, or ₹16,000) is categorically divided into two segments:</p>
-                            <ul class="list-disc pl-5 space-y-1 text-gray-400">
-                                <li><strong>Usable Capital / RD:</strong> The portion allocated to your credit card limit or Recurring Deposit is deposited directly into your bank account. It remains your personal asset.</li>
-                                <li><strong>Legal & Advisory Retainer:</strong> The service fee (e.g., ₹4,999 or ₹6,000) is strictly <strong>NON-REFUNDABLE</strong> once the legal documentation and backend syncing process begins (typically within 24 hours of payment).</li>
-                            </ul>
-                        </section>
-
-                        <section>
-                            <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-5 h-5 text-wealth-mint"></i> 3. The 90-Day Strict Mandate</h3>
-                            <p>Clients are strictly prohibited from applying for any external loans, credit cards, or digital lending apps during the 90-day incubation period. Initiating unauthorized "Hard Inquiries" or missing a monthly card payment will result in the immediate failure of the protocol. Homnivas assumes no liability for loan rejections caused by client negligence.</p>
-                        </section>
-
-                        <section>
-                            <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="scale" class="w-5 h-5 text-wealth-mint"></i> 4. Bank Discretion & Final Loans</h3>
-                            <p>While we guarantee the initiation of disputes and the facilitation of your initial credit card limit, the final sanctioning of the ₹2 Lakh to ₹5 Lakh personal loan remains at the absolute discretion of the partner banks, based on your final CIBIL score and verifiable income.</p>
-                        </section>
-                        
-                        <section>
-                            <h3 class="text-white font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="map-pin" class="w-5 h-5 text-wealth-mint"></i> 5. Governing Law</h3>
-                            <p>These terms shall be governed by and construed in accordance with the laws of India. Any disputes arising out of this agreement shall be subject to the exclusive jurisdiction of the courts in Kolkata, West Bengal.</p>
-                        </section>
-                    </div>
-                ` 
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-sm text-elite-black">1. Scope of Service</h3>
+                        <p class="text-gray-500">Homnivas acts as an advisory infrastructure. We are not a direct lender. Cards and loans are issued by partner banks.</p>
+                        <h3 class="font-bold text-sm text-elite-black mt-4">2. Retainer Fee</h3>
+                        <p class="text-gray-500">The Legal & Advisory portion of your payment is strictly non-refundable once processing begins.</p>
+                        <h3 class="font-bold text-sm text-elite-black mt-4">3. The 90-Day Strict Mandate</h3>
+                        <p class="text-gray-500">Clients are prohibited from applying for external loans during the 90-day period. "Hard Inquiries" will crash the process.</p>
+                        <h3 class="font-bold text-sm text-elite-black mt-4">4. Final Loans</h3>
+                        <p class="text-gray-500">Final loan sanctioning remains at the absolute discretion of partner banks based on final CIBIL and income.</p>
+                    </div>` 
             },
             contact: { 
                 title: "Contact Infrastructure", 
                 text: `
-                    <div class="space-y-6">
-                        <p>Our dedicated execution team and Relationship Managers (RMs) are available to assist you through your 90-day financial evolution.</p>
-                        
-                        <div class="bg-[#0a0a0a] p-5 rounded-2xl border border-white/10 shadow-inner">
-                            <h4 class="text-white font-bold text-base mb-3 flex items-center gap-2"><i data-lucide="building-2" class="w-5 h-5 text-wealth-mint"></i> Corporate Headquarters</h4>
-                            <p class="text-gray-400 leading-relaxed font-mono text-sm">
-                                Homnivas Finance Network<br>
-                                Regus Tower 1, Globsyn Crystal<br>
-                                Sector V, Salt Lake City<br>
-                                Kolkata, West Bengal - 700091<br>
-                                India
-                            </p>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <a href="https://wa.me/919836196650" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#25D366]/50 transition group">
-                                <div class="bg-[#25D366]/20 p-3 rounded-lg">
-                                    <i data-lucide="message-circle" class="w-6 h-6 text-[#25D366]"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-white font-bold text-sm">WhatsApp Terminal</h4>
-                                    <p class="text-xs text-gray-500 font-mono mt-1">+91 98361 96650</p>
-                                </div>
-                            </a>
-                            
-                            <a href="mailto:contact@homnivas.space" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-wealth-teal/50 transition group">
-                                <div class="bg-wealth-teal/20 p-3 rounded-lg">
-                                    <i data-lucide="mail" class="w-6 h-6 text-wealth-teal"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-white font-bold text-sm">Email Support</h4>
-                                    <p class="text-xs text-gray-500 font-mono mt-1">contact@homnivas.space</p>
-                                </div>
-                            </a>
-                        </div>
-                        
-                        <div class="bg-[#0a0a0a] p-4 rounded-xl border border-white/10 flex items-start gap-3">
-                            <i data-lucide="clock" class="w-5 h-5 text-wealth-mint flex-shrink-0 mt-0.5"></i>
-                            <div>
-                                <h4 class="text-white font-bold text-sm mb-1">Operational Hours</h4>
-                                <p class="text-gray-400 text-xs">Monday to Saturday: 10:00 AM – 6:00 PM (IST)<br>Closed on Sundays and National Public Holidays.</p>
-                            </div>
-                        </div>
-                    </div>
-                ` 
+                    <div class="space-y-4">
+                        <p class="text-gray-500"><strong>HQ:</strong> Regus Tower 1, Globsyn Crystal, Sector V, Kolkata, 700091</p>
+                        <p class="text-gray-500"><strong>WhatsApp:</strong> +91 98361 96650</p>
+                        <p class="text-gray-500"><strong>Email:</strong> contact@homnivas.space</p>
+                        <p class="text-gray-500 text-xs mt-4">Hours: Mon-Sat, 10 AM - 6 PM IST</p>
+                    </div>` 
             }
         };
 
@@ -916,7 +694,6 @@
             document.getElementById('modalContent').innerHTML = legalData[type].text;
             const modal = document.getElementById('legalModal');
             modal.classList.remove('hidden');
-            lucide.createIcons();
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
                 document.getElementById('modalContainer').classList.remove('scale-95');
@@ -930,58 +707,58 @@
             setTimeout(() => modal.classList.add('hidden'), 300);
         }
 
-        // --- 50 DYNAMIC SOCIAL PROOF DATA POINTS ---
+        // --- 50 DYNAMIC SOCIAL PROOF DATA ---
         const socialProofData = [
-            { user: "Rahul K. (Delhi)", time: "JUST NOW", action: 'started <span class="text-wealth-mint font-bold">Genesis Standard</span>' },
-            { user: "Priya S. (Mumbai)", time: "12 MINS AGO", action: 'secured their <span class="text-wealth-mint font-bold">₹10k Limit</span>' },
-            { user: "Amit D. (Pune)", time: "45 MINS AGO", action: 'joined the <span class="text-wealth-mint font-bold">Verified Cohort</span>' },
-            { user: "Neha J. (Bangalore)", time: "1 HOUR AGO", action: 'completed the <span class="text-wealth-mint font-bold">Digital KYC</span>' },
-            { user: "Vikram R. (Hyderabad)", time: "3 HOURS AGO", action: 'initiated the <span class="text-wealth-mint font-bold">CIBIL Reset</span>' },
-            { user: "Sneha P. (Chennai)", time: "5 HOURS AGO", action: 'activated their <span class="text-wealth-mint font-bold">Premium Vault</span>' },
-            { user: "Karthik M. (Kolkata)", time: "8 HOURS AGO", action: 'started <span class="text-wealth-mint font-bold">Genesis Standard</span>' },
-            { user: "Pooja V. (Jaipur)", time: "12 HOURS AGO", action: 'secured their <span class="text-wealth-mint font-bold">₹10k Limit</span>' },
-            { user: "Arjun N. (Ahmedabad)", time: "YESTERDAY", action: 'joined the <span class="text-wealth-mint font-bold">Reset Protocol</span>' },
-            { user: "Anjali S. (Surat)", time: "YESTERDAY", action: 'initiated the <span class="text-wealth-mint font-bold">CIBIL Cleanup</span>' },
-            { user: "Suresh B. (Lucknow)", time: "2 DAYS AGO", action: 'completed the <span class="text-wealth-mint font-bold">Digital KYC</span>' },
-            { user: "Meera T. (Chandigarh)", time: "2 DAYS AGO", action: 'activated their <span class="text-wealth-mint font-bold">Premium Vault</span>' },
-            { user: "Raj K. (Indore)", time: "2 DAYS AGO", action: 'started <span class="text-wealth-mint font-bold">Genesis Standard</span>' },
-            { user: "Kavita R. (Bhopal)", time: "3 DAYS AGO", action: 'secured their <span class="text-wealth-mint font-bold">₹10k Limit</span>' },
-            { user: "Sanjay M. (Patna)", time: "3 DAYS AGO", action: 'joined the <span class="text-wealth-mint font-bold">Verified Cohort</span>' },
-            { user: "Roshni D. (Noida)", time: "3 DAYS AGO", action: 'initiated the <span class="text-wealth-mint font-bold">CIBIL Reset</span>' },
-            { user: "Gaurav S. (Gurgaon)", time: "4 DAYS AGO", action: 'completed the <span class="text-wealth-mint font-bold">Digital KYC</span>' },
-            { user: "Divya N. (Delhi)", time: "4 DAYS AGO", action: 'activated their <span class="text-wealth-mint font-bold">Premium Vault</span>' },
-            { user: "Manoj P. (Mumbai)", time: "5 DAYS AGO", action: 'started <span class="text-wealth-mint font-bold">Genesis Standard</span>' },
-            { user: "Riya V. (Pune)", time: "5 DAYS AGO", action: 'secured their <span class="text-wealth-mint font-bold">₹10k Limit</span>' },
-            { user: "Aditya B. (Bangalore)", time: "5 DAYS AGO", action: 'joined the <span class="text-wealth-mint font-bold">Reset Protocol</span>' },
-            { user: "Swati M. (Hyderabad)", time: "6 DAYS AGO", action: 'initiated the <span class="text-wealth-mint font-bold">CIBIL Cleanup</span>' },
-            { user: "Nitin K. (Chennai)", time: "6 DAYS AGO", action: 'completed the <span class="text-wealth-mint font-bold">Digital KYC</span>' },
-            { user: "Shruti R. (Kolkata)", time: "6 DAYS AGO", action: 'activated their <span class="text-wealth-mint font-bold">Premium Vault</span>' },
-            { user: "Deepak S. (Jaipur)", time: "7 DAYS AGO", action: 'started <span class="text-wealth-mint font-bold">Genesis Verified</span>' },
-            { user: "Aarti D. (Ahmedabad)", time: "1 WEEK AGO", action: 'secured their <span class="text-wealth-mint font-bold">₹10k Limit</span>' },
-            { user: "Ravi N. (Surat)", time: "1 WEEK AGO", action: 'joined the <span class="text-wealth-mint font-bold">Verified Cohort</span>' },
-            { user: "Shikha P. (Lucknow)", time: "8 DAYS AGO", action: 'initiated the <span class="text-wealth-mint font-bold">CIBIL Reset</span>' },
-            { user: "Ajay V. (Chandigarh)", time: "8 DAYS AGO", action: 'completed the <span class="text-wealth-mint font-bold">Digital KYC</span>' },
-            { user: "Tanvi B. (Indore)", time: "9 DAYS AGO", action: 'activated their <span class="text-wealth-mint font-bold">Premium Vault</span>' },
-            { user: "Karan M. (Bhopal)", time: "9 DAYS AGO", action: 'started <span class="text-wealth-mint font-bold">Genesis Standard</span>' },
-            { user: "Pallavi K. (Patna)", time: "9 DAYS AGO", action: 'secured their <span class="text-wealth-mint font-bold">₹10k Limit</span>' },
-            { user: "Vishal R. (Noida)", time: "10 DAYS AGO", action: 'joined the <span class="text-wealth-mint font-bold">Reset Protocol</span>' },
-            { user: "Komal S. (Gurgaon)", time: "10 DAYS AGO", action: 'initiated the <span class="text-wealth-mint font-bold">CIBIL Cleanup</span>' },
-            { user: "Sahil D. (Delhi)", time: "10 DAYS AGO", action: 'completed the <span class="text-wealth-mint font-bold">Digital KYC</span>' },
-            { user: "Ananya N. (Mumbai)", time: "11 DAYS AGO", action: 'activated their <span class="text-wealth-mint font-bold">Premium Vault</span>' },
-            { user: "Mohit P. (Pune)", time: "11 DAYS AGO", action: 'started <span class="text-wealth-mint font-bold">Genesis Verified</span>' },
-            { user: "Radhika V. (Bangalore)", time: "12 DAYS AGO", action: 'secured their <span class="text-wealth-mint font-bold">₹10k Limit</span>' },
-            { user: "Anurag B. (Hyderabad)", time: "12 DAYS AGO", action: 'joined the <span class="text-wealth-mint font-bold">Verified Cohort</span>' },
-            { user: "Isha M. (Chennai)", time: "12 DAYS AGO", action: 'initiated the <span class="text-wealth-mint font-bold">CIBIL Reset</span>' },
-            { user: "Sumit K. (Kolkata)", time: "13 DAYS AGO", action: 'completed the <span class="text-wealth-mint font-bold">Digital KYC</span>' },
-            { user: "Preeti R. (Jaipur)", time: "13 DAYS AGO", action: 'activated their <span class="text-wealth-mint font-bold">Premium Vault</span>' },
-            { user: "Harsh S. (Ahmedabad)", time: "13 DAYS AGO", action: 'started <span class="text-wealth-mint font-bold">Genesis Standard</span>' },
-            { user: "Sonal D. (Surat)", time: "14 DAYS AGO", action: 'secured their <span class="text-wealth-mint font-bold">₹10k Limit</span>' },
-            { user: "Rajat N. (Lucknow)", time: "14 DAYS AGO", action: 'joined the <span class="text-wealth-mint font-bold">Reset Protocol</span>' },
-            { user: "Anita P. (Chandigarh)", time: "2 WEEKS AGO", action: 'initiated the <span class="text-wealth-mint font-bold">CIBIL Cleanup</span>' },
-            { user: "Tushar V. (Indore)", time: "2 WEEKS AGO", action: 'completed the <span class="text-wealth-mint font-bold">Digital KYC</span>' },
-            { user: "Bhumika B. (Bhopal)", time: "15 DAYS AGO", action: 'activated their <span class="text-wealth-mint font-bold">Premium Vault</span>' },
-            { user: "Yash M. (Patna)", time: "15 DAYS AGO", action: 'started <span class="text-wealth-mint font-bold">Genesis Verified</span>' },
-            { user: "Geeta K. (Noida)", time: "15 DAYS AGO", action: 'secured their <span class="text-wealth-mint font-bold">₹10k Limit</span>' }
+            { user: "Rahul K.", time: "JUST NOW", action: 'started <span class="text-wealth-mint">Genesis</span>' },
+            { user: "Priya S.", time: "12 MINS AGO", action: 'secured <span class="text-wealth-mint">₹10k Limit</span>' },
+            { user: "Amit D.", time: "45 MINS AGO", action: 'joined <span class="text-wealth-mint">Verified</span>' },
+            { user: "Neha J.", time: "1 HOUR AGO", action: 'completed <span class="text-wealth-mint">KYC</span>' },
+            { user: "Vikram R.", time: "3 HOURS AGO", action: 'initiated <span class="text-wealth-mint">Reset</span>' },
+            { user: "Sneha P.", time: "5 HOURS AGO", action: 'activated <span class="text-wealth-mint">Vault</span>' },
+            { user: "Karthik M.", time: "8 HOURS AGO", action: 'started <span class="text-wealth-mint">Genesis</span>' },
+            { user: "Pooja V.", time: "12 HOURS AGO", action: 'secured <span class="text-wealth-mint">₹10k Limit</span>' },
+            { user: "Arjun N.", time: "YESTERDAY", action: 'joined <span class="text-wealth-mint">Reset</span>' },
+            { user: "Anjali S.", time: "YESTERDAY", action: 'initiated <span class="text-wealth-mint">Cleanup</span>' },
+            { user: "Suresh B.", time: "2 DAYS AGO", action: 'completed <span class="text-wealth-mint">KYC</span>' },
+            { user: "Meera T.", time: "2 DAYS AGO", action: 'activated <span class="text-wealth-mint">Vault</span>' },
+            { user: "Raj K.", time: "2 DAYS AGO", action: 'started <span class="text-wealth-mint">Genesis</span>' },
+            { user: "Kavita R.", time: "3 DAYS AGO", action: 'secured <span class="text-wealth-mint">₹10k Limit</span>' },
+            { user: "Sanjay M.", time: "3 DAYS AGO", action: 'joined <span class="text-wealth-mint">Verified</span>' },
+            { user: "Roshni D.", time: "3 DAYS AGO", action: 'initiated <span class="text-wealth-mint">Reset</span>' },
+            { user: "Gaurav S.", time: "4 DAYS AGO", action: 'completed <span class="text-wealth-mint">KYC</span>' },
+            { user: "Divya N.", time: "4 DAYS AGO", action: 'activated <span class="text-wealth-mint">Vault</span>' },
+            { user: "Manoj P.", time: "5 DAYS AGO", action: 'started <span class="text-wealth-mint">Genesis</span>' },
+            { user: "Riya V.", time: "5 DAYS AGO", action: 'secured <span class="text-wealth-mint">₹10k Limit</span>' },
+            { user: "Aditya B.", time: "5 DAYS AGO", action: 'joined <span class="text-wealth-mint">Reset</span>' },
+            { user: "Swati M.", time: "6 DAYS AGO", action: 'initiated <span class="text-wealth-mint">Cleanup</span>' },
+            { user: "Nitin K.", time: "6 DAYS AGO", action: 'completed <span class="text-wealth-mint">KYC</span>' },
+            { user: "Shruti R.", time: "6 DAYS AGO", action: 'activated <span class="text-wealth-mint">Vault</span>' },
+            { user: "Deepak S.", time: "7 DAYS AGO", action: 'started <span class="text-wealth-mint">Verified</span>' },
+            { user: "Aarti D.", time: "1 WEEK AGO", action: 'secured <span class="text-wealth-mint">₹10k Limit</span>' },
+            { user: "Ravi N.", time: "1 WEEK AGO", action: 'joined <span class="text-wealth-mint">Verified</span>' },
+            { user: "Shikha P.", time: "8 DAYS AGO", action: 'initiated <span class="text-wealth-mint">Reset</span>' },
+            { user: "Ajay V.", time: "8 DAYS AGO", action: 'completed <span class="text-wealth-mint">KYC</span>' },
+            { user: "Tanvi B.", time: "9 DAYS AGO", action: 'activated <span class="text-wealth-mint">Vault</span>' },
+            { user: "Karan M.", time: "9 DAYS AGO", action: 'started <span class="text-wealth-mint">Genesis</span>' },
+            { user: "Pallavi K.", time: "9 DAYS AGO", action: 'secured <span class="text-wealth-mint">₹10k Limit</span>' },
+            { user: "Vishal R.", time: "10 DAYS AGO", action: 'joined <span class="text-wealth-mint">Reset</span>' },
+            { user: "Komal S.", time: "10 DAYS AGO", action: 'initiated <span class="text-wealth-mint">Cleanup</span>' },
+            { user: "Sahil D.", time: "10 DAYS AGO", action: 'completed <span class="text-wealth-mint">KYC</span>' },
+            { user: "Ananya N.", time: "11 DAYS AGO", action: 'activated <span class="text-wealth-mint">Vault</span>' },
+            { user: "Mohit P.", time: "11 DAYS AGO", action: 'started <span class="text-wealth-mint">Verified</span>' },
+            { user: "Radhika V.", time: "12 DAYS AGO", action: 'secured <span class="text-wealth-mint">₹10k Limit</span>' },
+            { user: "Anurag B.", time: "12 DAYS AGO", action: 'joined <span class="text-wealth-mint">Verified</span>' },
+            { user: "Isha M.", time: "12 DAYS AGO", action: 'initiated <span class="text-wealth-mint">Reset</span>' },
+            { user: "Sumit K.", time: "13 DAYS AGO", action: 'completed <span class="text-wealth-mint">KYC</span>' },
+            { user: "Preeti R.", time: "13 DAYS AGO", action: 'activated <span class="text-wealth-mint">Vault</span>' },
+            { user: "Harsh S.", time: "13 DAYS AGO", action: 'started <span class="text-wealth-mint">Genesis</span>' },
+            { user: "Sonal D.", time: "14 DAYS AGO", action: 'secured <span class="text-wealth-mint">₹10k Limit</span>' },
+            { user: "Rajat N.", time: "14 DAYS AGO", action: 'joined <span class="text-wealth-mint">Reset</span>' },
+            { user: "Anita P.", time: "2 WEEKS AGO", action: 'initiated <span class="text-wealth-mint">Cleanup</span>' },
+            { user: "Tushar V.", time: "2 WEEKS AGO", action: 'completed <span class="text-wealth-mint">KYC</span>' },
+            { user: "Bhumika B.", time: "15 DAYS AGO", action: 'activated <span class="text-wealth-mint">Vault</span>' },
+            { user: "Yash M.", time: "15 DAYS AGO", action: 'started <span class="text-wealth-mint">Verified</span>' },
+            { user: "Geeta K.", time: "15 DAYS AGO", action: 'secured <span class="text-wealth-mint">₹10k Limit</span>' }
         ];
 
         socialProofData.sort(() => Math.random() - 0.5);
@@ -996,21 +773,18 @@
             document.getElementById('toastAction').innerHTML = current.action;
             document.getElementById('toastTime').innerText = current.time;
 
-            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.remove('translate-y-20', 'opacity-0');
             toast.classList.add('translate-y-0', 'opacity-100');
 
             setTimeout(() => {
                 toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-24', 'opacity-0');
-            }, 4500);
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 4000);
 
             currentIndex = (currentIndex + 1) % socialProofData.length;
         }
 
-        setTimeout(() => {
-            showNextToast();
-            setInterval(showNextToast, 14000); 
-        }, 3000);
+        setTimeout(() => { showNextToast(); setInterval(showNextToast, 12000); }, 3000);
     </script>
 </body>
 </html>
