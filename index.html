@@ -47,7 +47,7 @@
         /* Sleek Video Player */
         .video-container {
             position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-            border-radius: 2rem; /* Maximum Rounding */
+            border-radius: 2rem; 
             box-shadow: 0 20px 40px -15px rgba(1, 28, 24, 0.3);
             background: #011c18; cursor: pointer; border: 1px solid rgba(13, 148, 136, 0.3);
             transform: translateZ(0);
@@ -72,7 +72,7 @@
         }
 
         .minimal-card {
-            background: #ffffff; border: 1px solid #ccfbf1; border-radius: 2rem; /* Maximum Rounding */
+            background: #ffffff; border: 1px solid #ccfbf1; border-radius: 2rem; 
             box-shadow: 0 4px 10px -2px rgba(13, 148, 136, 0.05);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -80,7 +80,7 @@
             transform: translateY(-5px); box-shadow: 0 20px 30px -10px rgba(13, 148, 136, 0.15); border-color: #5eead4;
         }
 
-        /* Deep Teal Cards replacing Black */
+        /* Deep Teal Cards */
         .dark-card {
             background: rgba(4, 47, 46, 0.6); border: 1px solid rgba(13, 148, 136, 0.2); border-radius: 2rem;
             backdrop-filter: blur(12px); transition: all 0.3s ease;
@@ -89,9 +89,9 @@
             transform: translateY(-5px); border-color: rgba(20, 184, 166, 0.5); box-shadow: 0 15px 30px -5px rgba(13, 148, 136, 0.3);
         }
 
-        /* Deep Teal Buttons replacing Black */
+        /* Deep Teal Buttons */
         .btn-dark-teal {
-            background-color: #011c18; color: #ffffff; border-radius: 1.5rem; /* Maximum Rounding */
+            background-color: #011c18; color: #ffffff; border-radius: 1.5rem; 
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 20px -6px rgba(1, 28, 24, 0.5);
         }
         .btn-dark-teal:hover { background-color: #042f2e; transform: translateY(-2px); box-shadow: 0 10px 25px -6px rgba(13, 148, 136, 0.5); }
@@ -112,8 +112,8 @@
 </head>
 <body class="antialiased tracking-tight">
 
-    <!-- Top Banner (Teal Accent) -->
-    <div class="fixed top-0 w-full z-[60] bg-wealth-teal text-white text-[10px] md:text-[11px] font-medium text-center py-2 px-3 flex items-center justify-center gap-2 uppercase tracking-widest shadow-sm">
+    <!-- Top Banner -->
+    <div class="fixed top-0 w-full z-[60] bg-wealth-teal text-white text-[9px] md:text-[11px] font-medium text-center py-2 px-3 flex items-center justify-center gap-2 uppercase tracking-widest shadow-sm">
         <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse flex-shrink-0 shadow-[0_0_8px_#ffffff]"></span>
         <span class="truncate">Limited Slots: Genesis Pre-Approvals Active</span>
     </div>
@@ -121,51 +121,51 @@
     <!-- Header -->
     <header class="fixed top-[32px] w-full z-50 glass-panel shadow-sm transition-all">
         <div class="max-w-7xl mx-auto px-4 md:px-8 h-14 md:h-16 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2.5 group">
-                <!-- Deep Teal Logo Box -->
-                <div class="flex items-center justify-center w-8 h-8 rounded-2xl bg-wealth-darkest text-white shadow-md border border-wealth-dark transition group-hover:border-wealth-teal">
-                    <svg class="w-4 h-4 text-wealth-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <a href="#" class="flex items-center gap-2 md:gap-2.5 group">
+                <div class="flex items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-xl bg-wealth-darkest text-white shadow-md border border-wealth-dark transition group-hover:border-wealth-teal">
+                    <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-wealth-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                         <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                         <line x1="12" y1="22.08" x2="12" y2="12"></line>
                     </svg>
                 </div>
-                <div class="font-extrabold text-xl tracking-tight text-wealth-darkest">
+                <div class="font-extrabold text-lg md:text-xl tracking-tight text-wealth-darkest">
                     Homnivas<span class="text-wealth-teal">.space</span>
                 </div>
             </a>
             <div class="flex items-center gap-1.5">
                 <i data-lucide="shield-check" class="w-3.5 h-3.5 text-wealth-teal hidden sm:block"></i>
-                <span class="text-[9px] md:text-[10px] font-bold text-wealth-darker uppercase tracking-widest bg-wealth-light border border-teal-200 px-3 py-1.5 rounded-xl">AES-256 Encrypted</span>
+                <!-- MOBILE FIXED AES BADGE (Smaller, No Wrap) -->
+                <span class="text-[8px] sm:text-[10px] font-bold text-wealth-darker uppercase tracking-widest bg-wealth-light border border-teal-200 px-2 py-1 md:px-3 md:py-1.5 rounded-lg md:rounded-xl whitespace-nowrap">AES-256 Secured</span>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section (WITH FIXED TOP SPACING FOR MOBILE) -->
-    <main class="max-w-7xl mx-auto px-4 md:px-8 pt-28 md:pt-36 pb-12 relative">
-        <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-teal-100 rounded-full blur-[100px] -z-10 opacity-70"></div>
+    <!-- Hero Section -->
+    <main class="max-w-7xl mx-auto px-4 md:px-8 pt-24 md:pt-36 pb-12 relative">
+        <div class="absolute top-0 right-0 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-teal-100 rounded-full blur-[80px] md:blur-[100px] -z-10 opacity-70"></div>
         
-        <section class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10">
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
             <div class="reveal">
-                <!-- Deep Teal Touch Badge -->
-                <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-2xl bg-wealth-darkest text-white text-[10px] font-bold uppercase tracking-widest mb-5 border border-wealth-dark shadow-md">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 md:px-4 md:py-2 rounded-xl md:rounded-2xl bg-wealth-darkest text-white text-[9px] md:text-[10px] font-bold uppercase tracking-widest mb-4 md:mb-5 border border-wealth-dark shadow-md">
                     <i data-lucide="zap" class="w-3 h-3 text-wealth-mint fill-current"></i> Elite Genesis & Reset Protocols
                 </span>
-                <h1 class="font-extrabold text-4xl sm:text-5xl md:text-[3.25rem] tracking-tight text-wealth-darkest mb-5 leading-[1.15]">
+                <!-- Scaled down font for mobile -->
+                <h1 class="font-extrabold text-3xl sm:text-5xl md:text-[3.25rem] tracking-tight text-wealth-darkest mb-3 md:mb-5 leading-[1.15]">
                     Step Into a Safe Space. <br>
                     <span class="bg-gradient-to-r from-wealth-teal to-wealth-mint bg-clip-text text-transparent">Rewrite Your Future.</span>
                 </h1>
-                <p class="text-[14px] md:text-[15px] text-teal-900/80 mb-8 font-medium leading-relaxed max-w-lg">
+                <p class="text-[12px] md:text-[15px] text-teal-900/80 mb-6 md:mb-8 font-medium leading-relaxed max-w-lg">
                     Whether you have a rejected CIBIL or zero credit history, our engineered 90-day protocols secure your guaranteed limits and unlock up to ₹5 Lakh in premium banking capital.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-3">
-                    <a href="#breakdown" class="w-full sm:w-auto btn-dark-teal px-8 py-4 flex justify-center items-center gap-2 text-[14px] font-bold uppercase tracking-wide">
+                    <a href="#breakdown" class="w-full sm:w-auto btn-dark-teal px-6 py-3.5 md:px-8 md:py-4 flex justify-center items-center gap-2 text-[13px] md:text-[14px] font-bold uppercase tracking-wide">
                         Initialize Protocol <i data-lucide="arrow-down" class="w-4 h-4 text-wealth-mint animate-bounce"></i>
                     </a>
                 </div>
             </div>
             
-            <div class="reveal delay-100 mt-2 lg:mt-0">
+            <div class="reveal delay-100 mt-4 lg:mt-0">
                 <div class="video-container group" id="heroVideoContainer" onclick="togglePlay()">
                     <img src="https://images.unsplash.com/photo-1603899122634-f086ca5f5ddd?auto=format&fit=crop&w=800&q=80" alt="Indian Professional getting CIBIL Reset Approval">
                     <video id="heroVideo" preload="metadata" playsinline>
@@ -173,9 +173,8 @@
                     </video>
                     <div class="video-overlay"></div>
                     <div class="absolute inset-0 flex items-center justify-center play-btn-wrapper transition-opacity duration-300">
-                        <!-- Play Button Fully Rounded -->
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-white/90 backdrop-blur rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(1,28,24,0.4)] transition-transform group-hover:scale-105 border border-teal-100">
-                            <i data-lucide="play" class="w-6 h-6 text-wealth-darkest ml-1"></i>
+                        <div class="w-14 h-14 md:w-20 md:h-20 bg-white/90 backdrop-blur rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(1,28,24,0.4)] transition-transform group-hover:scale-105 border border-teal-100">
+                            <i data-lucide="play" class="w-5 h-5 md:w-6 md:h-6 text-wealth-darkest ml-1"></i>
                         </div>
                     </div>
                 </div>
@@ -183,98 +182,97 @@
         </section>
     </main>
 
-    <!-- Architecture of Trust (THE DEEP TEAL TOUCH) -->
-    <section class="bg-wealth-darkest py-16 md:py-24 relative overflow-hidden rounded-t-[3rem] sm:rounded-t-[4rem] border-t border-wealth-teal/20">
-        <!-- Ambient glowing background inside the dark section -->
-        <div class="absolute top-0 right-1/4 w-80 h-80 bg-wealth-teal/10 rounded-full blur-[100px] pointer-events-none"></div>
-        <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-wealth-mint/5 rounded-full blur-[100px] pointer-events-none"></div>
+    <!-- Architecture of Trust -->
+    <section class="bg-wealth-darkest py-12 md:py-24 relative overflow-hidden rounded-t-[2.5rem] md:rounded-t-[4rem] border-t border-wealth-teal/20">
+        <div class="absolute top-0 right-1/4 w-60 md:w-80 h-60 md:h-80 bg-wealth-teal/10 rounded-full blur-[80px] md:blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-1/4 w-60 md:w-80 h-60 md:h-80 bg-wealth-mint/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none"></div>
         
-        <div class="max-w-7xl mx-auto px-4 md:px-8 text-center mb-12 reveal">
-            <span class="text-wealth-mint text-[10px] font-bold uppercase tracking-widest mb-3 block">// System Infrastructure</span>
-            <h2 class="font-extrabold text-3xl md:text-4xl text-white tracking-tight mb-4">Architecture of Trust</h2>
-            <p class="text-teal-100/60 text-[14px] md:text-[15px] font-medium max-w-xl mx-auto">How our infrastructure guarantees your safety and fast-tracks recovery.</p>
+        <div class="max-w-7xl mx-auto px-4 md:px-8 text-center mb-8 md:mb-12 reveal">
+            <span class="text-wealth-mint text-[9px] md:text-[10px] font-bold uppercase tracking-widest mb-2 block">// System Infrastructure</span>
+            <h2 class="font-extrabold text-2xl md:text-4xl text-white tracking-tight mb-2 md:mb-4">Architecture of Trust</h2>
+            <p class="text-teal-100/60 text-[12px] md:text-[15px] font-medium max-w-xl mx-auto">How our infrastructure guarantees your safety and fast-tracks recovery.</p>
         </div>
 
-        <div class="max-w-6xl mx-auto px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 relative z-10">
-            <div class="dark-card p-8 text-left reveal delay-100">
-                <i data-lucide="database" class="w-8 h-8 text-wealth-mint mb-5"></i>
-                <h4 class="font-bold text-[15px] text-white mb-2">Bureau API Sync</h4>
-                <p class="text-teal-100/60 text-[13px] leading-relaxed">Direct connection with credit bureaus for real-time tracking of dispute removals.</p>
+        <div class="max-w-6xl mx-auto px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 relative z-10">
+            <div class="dark-card p-5 md:p-8 text-left reveal delay-100">
+                <i data-lucide="database" class="w-6 h-6 md:w-8 md:h-8 text-wealth-mint mb-3 md:mb-5"></i>
+                <h4 class="font-bold text-[14px] md:text-[15px] text-white mb-1.5 md:mb-2">Bureau API Sync</h4>
+                <p class="text-teal-100/60 text-[11px] md:text-[13px] leading-relaxed">Direct connection with credit bureaus for real-time tracking of dispute removals.</p>
             </div>
-            <div class="dark-card p-8 text-left reveal delay-200">
-                <i data-lucide="scale" class="w-8 h-8 text-wealth-teal mb-5"></i>
-                <h4 class="font-bold text-[15px] text-white mb-2">Legal Arbitration</h4>
-                <p class="text-teal-100/60 text-[13px] leading-relaxed">Attorneys draft airtight disputes to legally erase fake entries and defaults.</p>
+            <div class="dark-card p-5 md:p-8 text-left reveal delay-200">
+                <i data-lucide="scale" class="w-6 h-6 md:w-8 md:h-8 text-wealth-teal mb-3 md:mb-5"></i>
+                <h4 class="font-bold text-[14px] md:text-[15px] text-white mb-1.5 md:mb-2">Legal Arbitration</h4>
+                <p class="text-teal-100/60 text-[11px] md:text-[13px] leading-relaxed">Attorneys draft airtight disputes to legally erase fake entries and defaults.</p>
             </div>
-            <div class="dark-card p-8 text-left reveal delay-300">
-                <i data-lucide="building-2" class="w-8 h-8 text-wealth-mint mb-5"></i>
-                <h4 class="font-bold text-[15px] text-white mb-2">RBI Compliant Vaults</h4>
-                <p class="text-teal-100/60 text-[13px] leading-relaxed">Your capital is held by regulated banks, never by us, ensuring 100% security.</p>
+            <div class="dark-card p-5 md:p-8 text-left reveal delay-300">
+                <i data-lucide="building-2" class="w-6 h-6 md:w-8 md:h-8 text-wealth-mint mb-3 md:mb-5"></i>
+                <h4 class="font-bold text-[14px] md:text-[15px] text-white mb-1.5 md:mb-2">RBI Compliant Vaults</h4>
+                <p class="text-teal-100/60 text-[11px] md:text-[13px] leading-relaxed">Your capital is held by regulated banks, never by us, ensuring 100% security.</p>
             </div>
-            <div class="dark-card p-8 text-left reveal delay-400">
-                <i data-lucide="lock" class="w-8 h-8 text-wealth-teal mb-5"></i>
-                <h4 class="font-bold text-[15px] text-white mb-2">AES-256 Encryption</h4>
-                <p class="text-teal-100/60 text-[13px] leading-relaxed">Military-grade protection for your KYC and banking data against breaches.</p>
+            <div class="dark-card p-5 md:p-8 text-left reveal delay-400">
+                <i data-lucide="lock" class="w-6 h-6 md:w-8 md:h-8 text-wealth-teal mb-3 md:mb-5"></i>
+                <h4 class="font-bold text-[14px] md:text-[15px] text-white mb-1.5 md:mb-2">AES-256 Encryption</h4>
+                <p class="text-teal-100/60 text-[11px] md:text-[13px] leading-relaxed">Military-grade protection for your KYC and banking data against breaches.</p>
             </div>
         </div>
     </section>
 
     <!-- MINIMAL TABBED PRICING SECTION -->
-    <main class="max-w-7xl mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-12 relative">
+    <main class="max-w-7xl mx-auto px-4 md:px-8 pt-12 md:pt-24 pb-10 relative">
         <section id="breakdown">
-            <div class="text-center mb-10 reveal">
-                <h2 class="font-extrabold text-3xl md:text-4xl tracking-tight text-wealth-darkest mb-3">Choose Your Protocol</h2>
-                <p class="text-teal-800/80 text-[14px] md:text-[15px] font-medium">Select the exact blueprint for your financial recovery.</p>
+            <div class="text-center mb-8 md:mb-10 reveal">
+                <h2 class="font-extrabold text-2xl md:text-4xl tracking-tight text-wealth-darkest mb-2 md:mb-3">Choose Your Protocol</h2>
+                <p class="text-teal-800/80 text-[12px] md:text-[15px] font-medium">Select the exact blueprint for your financial recovery.</p>
             </div>
 
-            <!-- FIXED MOBILE TABS: Fully Rounded -->
-            <div class="max-w-2xl mx-auto mb-10 reveal delay-100 w-full px-1">
-                <div class="flex flex-row bg-teal-50/80 p-1.5 rounded-[2rem] border border-teal-200/60 w-full shadow-inner">
-                    <button id="tab-standard" onclick="switchPlan('standard')" class="flex-1 flex flex-col items-center justify-center py-2.5 sm:py-3 rounded-[1.5rem] transition-all duration-300 outline-none w-1/3 tab-active">
-                        <span class="font-bold text-[12px] sm:text-[14px]">Standard</span>
-                        <span class="text-[10px] sm:text-[11px] opacity-80 mt-0.5 font-semibold">₹34,999</span>
+            <!-- TABS -->
+            <div class="max-w-2xl mx-auto mb-8 md:mb-10 reveal delay-100 w-full px-1">
+                <div class="flex flex-row bg-teal-50/80 p-1.5 rounded-2xl md:rounded-[2rem] border border-teal-200/60 w-full shadow-inner">
+                    <button id="tab-standard" onclick="switchPlan('standard')" class="flex-1 flex flex-col items-center justify-center py-2 md:py-3 rounded-xl md:rounded-[1.5rem] transition-all duration-300 outline-none w-1/3 tab-active">
+                        <span class="font-bold text-[11px] md:text-[14px]">Standard</span>
+                        <span class="text-[9px] md:text-[11px] opacity-80 mt-0.5 font-semibold">₹34,999</span>
                     </button>
-                    <button id="tab-verified" onclick="switchPlan('verified')" class="flex-1 flex flex-col items-center justify-center py-2.5 sm:py-3 rounded-[1.5rem] transition-all duration-300 outline-none w-1/3 tab-inactive">
-                        <span class="font-bold text-[12px] sm:text-[14px]">Verified</span>
-                        <span class="text-[10px] sm:text-[11px] opacity-80 mt-0.5 font-semibold">₹14,999</span>
+                    <button id="tab-verified" onclick="switchPlan('verified')" class="flex-1 flex flex-col items-center justify-center py-2 md:py-3 rounded-xl md:rounded-[1.5rem] transition-all duration-300 outline-none w-1/3 tab-inactive">
+                        <span class="font-bold text-[11px] md:text-[14px]">Verified</span>
+                        <span class="text-[9px] md:text-[11px] opacity-80 mt-0.5 font-semibold">₹14,999</span>
                     </button>
-                    <button id="tab-reset" onclick="switchPlan('reset')" class="flex-1 flex flex-col items-center justify-center py-2.5 sm:py-3 rounded-[1.5rem] transition-all duration-300 outline-none w-1/3 tab-inactive">
-                        <span class="font-bold text-[12px] sm:text-[14px]">Reset</span>
-                        <span class="text-[10px] sm:text-[11px] opacity-80 mt-0.5 font-semibold">₹16,000</span>
+                    <button id="tab-reset" onclick="switchPlan('reset')" class="flex-1 flex flex-col items-center justify-center py-2 md:py-3 rounded-xl md:rounded-[1.5rem] transition-all duration-300 outline-none w-1/3 tab-inactive">
+                        <span class="font-bold text-[11px] md:text-[14px]">Reset</span>
+                        <span class="text-[9px] md:text-[11px] opacity-80 mt-0.5 font-semibold">₹16,000</span>
                     </button>
                 </div>
                 
                 <!-- Target Warning -->
-                <div class="mt-6 text-center flex justify-center">
-                    <p id="plan-target" class="inline-flex items-center gap-2 text-[12px] md:text-[13px] font-bold px-5 py-2.5 rounded-2xl border shadow-sm transition-all content-fade"></p>
+                <div class="mt-5 md:mt-6 text-center flex justify-center">
+                    <p id="plan-target" class="inline-flex items-center gap-1.5 md:gap-2 text-[10px] md:text-[13px] font-bold px-3 py-1.5 md:px-5 md:py-2.5 rounded-xl md:rounded-2xl border shadow-sm transition-all content-fade"></p>
                 </div>
             </div>
 
-            <!-- Dynamic Minimal Cards Container -->
-            <div id="plan-cards" class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 max-w-5xl mx-auto mb-10 content-fade">
+            <!-- Dynamic Minimal Cards -->
+            <div id="plan-cards" class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto mb-8 md:mb-10 content-fade">
                 <!-- Injected via JS -->
             </div>
 
-            <!-- Total Line & SUB-CTA Button Container (Deep Teal Button Accent) -->
+            <!-- Footer CTA -->
             <div class="max-w-5xl mx-auto text-center content-fade" id="plan-footer">
-                <div class="bg-teal-50/80 border border-teal-100 rounded-[2rem] p-6 mb-8 flex flex-col sm:flex-row items-center justify-center gap-3 shadow-sm">
-                    <i data-lucide="info" class="w-5 h-5 text-wealth-teal flex-shrink-0"></i>
-                    <p id="plan-total-text" class="text-[13px] sm:text-[14px] font-medium text-wealth-darker"></p>
+                <div class="bg-teal-50/80 border border-teal-100 rounded-xl md:rounded-[2rem] p-4 md:p-6 mb-6 md:mb-8 flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-3 shadow-sm">
+                    <i data-lucide="info" class="w-4 h-4 md:w-5 md:h-5 text-wealth-teal flex-shrink-0"></i>
+                    <p id="plan-total-text" class="text-[11px] md:text-[14px] font-medium text-wealth-darker"></p>
                 </div>
                 
-                <a href="#" id="plan-cta-btn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 btn-dark-teal px-10 py-4 font-bold text-[14px] uppercase tracking-wider mx-auto w-full sm:w-auto">
+                <a href="#" id="plan-cta-btn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 btn-dark-teal px-6 py-3.5 md:px-10 md:py-4 font-bold text-[12px] md:text-[14px] uppercase tracking-wider mx-auto w-full sm:w-auto">
                     <!-- Text injected via JS -->
                 </a>
             </div>
         </section>
 
-        <!-- Dynamic 90-Day Chain -->
-        <section class="py-16 md:py-24 border-t border-teal-100/50 mt-12 relative">
-            <div class="absolute top-20 right-0 w-64 h-64 bg-teal-100/50 rounded-full blur-[80px] -z-10"></div>
+        <!-- Dynamic 90-Day Chain (ALL 4 STEPS NOW) -->
+        <section class="py-12 md:py-24 border-t border-teal-100/50 mt-10 relative">
+            <div class="absolute top-10 right-0 w-48 md:w-64 h-48 md:h-64 bg-teal-100/50 rounded-full blur-[60px] md:blur-[80px] -z-10"></div>
             
-            <div class="text-center mb-12 reveal">
-                <h2 class="font-extrabold text-3xl md:text-4xl tracking-tight text-wealth-darkest mb-3">The 90-Day Masterplan</h2>
-                <p class="text-teal-800/80 text-[14px] md:text-[15px] font-medium">Step-by-step blueprint of your financial recovery.</p>
+            <div class="text-center mb-10 md:mb-12 reveal">
+                <h2 class="font-extrabold text-2xl md:text-4xl tracking-tight text-wealth-darkest mb-2 md:mb-3">The 90-Day Masterplan</h2>
+                <p class="text-teal-800/80 text-[12px] md:text-[15px] font-medium">Step-by-step blueprint of your financial recovery.</p>
             </div>
             
             <div class="max-w-3xl mx-auto relative content-fade" id="plan-steps">
@@ -283,21 +281,21 @@
         </section>
     </main>
 
-    <!-- DETAILED FAQs (Light Teal Theme) -->
-    <section class="py-16 md:py-24 bg-teal-50/50 border-y border-teal-100/50">
-        <div class="text-center mb-12 reveal">
-            <h2 class="font-extrabold text-3xl md:text-4xl tracking-tight text-wealth-darkest mb-3">Absolute Clarity</h2>
-            <p class="text-teal-800/80 text-[14px] md:text-[15px] font-medium">Every detail explained. Zero hidden terms.</p>
+    <!-- DETAILED FAQs -->
+    <section class="py-12 md:py-24 bg-teal-50/50 border-y border-teal-100/50">
+        <div class="text-center mb-10 md:mb-12 reveal">
+            <h2 class="font-extrabold text-2xl md:text-4xl tracking-tight text-wealth-darkest mb-2 md:mb-3">Absolute Clarity</h2>
+            <p class="text-teal-800/80 text-[12px] md:text-[15px] font-medium">Every detail explained. Zero hidden terms.</p>
         </div>
-        <div class="max-w-3xl mx-auto space-y-4 px-4 reveal delay-100">
+        <div class="max-w-3xl mx-auto space-y-3 md:space-y-4 px-4 reveal delay-100">
             <!-- FAQ 1 -->
             <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
-                <div class="p-6 flex justify-between items-center font-bold text-[14px] md:text-[15px] text-wealth-darkest">
+                <div class="p-4 md:p-6 flex justify-between items-center font-bold text-[13px] md:text-[15px] text-wealth-darkest">
                     Which protocol is exactly right for me?
-                    <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
+                    <i data-lucide="chevron-down" class="w-4 h-4 md:w-5 md:h-5 faq-icon transition-transform"></i>
                 </div>
-                <div class="faq-content bg-white px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-teal-50">
-                    <p class="py-5 leading-relaxed">
+                <div class="faq-content bg-white px-4 md:px-6 text-[12px] md:text-[14px] text-gray-600 font-medium border-t border-teal-50">
+                    <p class="py-4 md:py-5 leading-relaxed">
                         <strong class="text-wealth-teal">Standard (₹34,999):</strong> For 0/-1 CIBIL without formal income proof. Uses ₹20k RD strategy.<br><br>
                         <strong class="text-wealth-teal">Verified (₹14,999):</strong> For 0/-1 CIBIL with verifiable salary/business statements. No RD needed.<br><br>
                         <strong class="text-wealth-teal">Reset (₹16,000):</strong> For bad/negative CIBIL scores that require our legal team to dispute records.
@@ -306,118 +304,106 @@
             </div>
             <!-- FAQ 2 -->
             <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
-                <div class="p-6 flex justify-between items-center font-bold text-[14px] md:text-[15px] text-wealth-darkest">
+                <div class="p-4 md:p-6 flex justify-between items-center font-bold text-[13px] md:text-[15px] text-wealth-darkest">
                     Is my Capital (₹10k Limit or ₹20k RD) safe? Who holds it?
-                    <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
+                    <i data-lucide="chevron-down" class="w-4 h-4 md:w-5 md:h-5 faq-icon transition-transform"></i>
                 </div>
-                <div class="faq-content bg-white px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-teal-50">
-                    <p class="py-5 leading-relaxed">Yes, 100% safe. It is transferred directly into an account opened in your name with an RBI-regulated banking partner. It remains entirely your personal asset.</p>
+                <div class="faq-content bg-white px-4 md:px-6 text-[12px] md:text-[14px] text-gray-600 font-medium border-t border-teal-50">
+                    <p class="py-4 md:py-5 leading-relaxed">Yes, 100% safe. It is transferred directly into an account opened in your name with an RBI-regulated banking partner. It remains entirely your personal asset.</p>
                 </div>
             </div>
             <!-- FAQ 3 -->
             <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
-                <div class="p-6 flex justify-between items-center font-bold text-[14px] md:text-[15px] text-wealth-darkest">
+                <div class="p-4 md:p-6 flex justify-between items-center font-bold text-[13px] md:text-[15px] text-wealth-darkest">
                     Is the final ₹5 Lakh Personal Loan guaranteed?
-                    <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
+                    <i data-lucide="chevron-down" class="w-4 h-4 md:w-5 md:h-5 faq-icon transition-transform"></i>
                 </div>
-                <div class="faq-content bg-white px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-teal-50">
-                    <p class="py-5 leading-relaxed">If your profile hits 750+ and you manage credit flawlessly for 90 days, you become pre-approved in bank systems. Final sanctions are subject to bank underwriting policies.</p>
+                <div class="faq-content bg-white px-4 md:px-6 text-[12px] md:text-[14px] text-gray-600 font-medium border-t border-teal-50">
+                    <p class="py-4 md:py-5 leading-relaxed">If your profile hits 750+ and you manage credit flawlessly for 90 days, you become pre-approved in bank systems. Final sanctions are subject to bank underwriting policies.</p>
                 </div>
             </div>
             <!-- FAQ 4 -->
             <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
-                <div class="p-6 flex justify-between items-center font-bold text-[14px] md:text-[15px] text-wealth-darkest">
+                <div class="p-4 md:p-6 flex justify-between items-center font-bold text-[13px] md:text-[15px] text-wealth-darkest">
                     Are there any hidden or subsequent charges?
-                    <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
+                    <i data-lucide="chevron-down" class="w-4 h-4 md:w-5 md:h-5 faq-icon transition-transform"></i>
                 </div>
-                <div class="faq-content bg-white px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-teal-50">
-                    <p class="py-5 leading-relaxed">No. The Retainer fee covers the entire 90-day operation. We do not bill you further for disputes or final loan processing.</p>
+                <div class="faq-content bg-white px-4 md:px-6 text-[12px] md:text-[14px] text-gray-600 font-medium border-t border-teal-50">
+                    <p class="py-4 md:py-5 leading-relaxed">No. The Retainer fee covers the entire 90-day operation. We do not bill you further for disputes or final loan processing.</p>
                 </div>
             </div>
             <!-- FAQ 5 -->
             <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
-                <div class="p-6 flex justify-between items-center font-bold text-[14px] md:text-[15px] text-wealth-darkest">
+                <div class="p-4 md:p-6 flex justify-between items-center font-bold text-[13px] md:text-[15px] text-wealth-darkest">
                     What happens if I miss my monthly card payment?
-                    <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
+                    <i data-lucide="chevron-down" class="w-4 h-4 md:w-5 md:h-5 faq-icon transition-transform"></i>
                 </div>
-                <div class="faq-content bg-white px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-teal-50">
-                    <p class="py-5 leading-relaxed">Missing a payment will severely damage the incubation process and result in the rejection of your final loan. You must pay strictly before due dates.</p>
+                <div class="faq-content bg-white px-4 md:px-6 text-[12px] md:text-[14px] text-gray-600 font-medium border-t border-teal-50">
+                    <p class="py-4 md:py-5 leading-relaxed">Missing a payment will severely damage the incubation process and result in the rejection of your final loan. You must pay strictly before due dates.</p>
                 </div>
             </div>
             <!-- FAQ 6 -->
             <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
-                <div class="p-6 flex justify-between items-center font-bold text-[14px] md:text-[15px] text-wealth-darkest">
+                <div class="p-4 md:p-6 flex justify-between items-center font-bold text-[13px] md:text-[15px] text-wealth-darkest">
                     Can I apply for other apps/loans during these 90 days?
-                    <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
+                    <i data-lucide="chevron-down" class="w-4 h-4 md:w-5 md:h-5 faq-icon transition-transform"></i>
                 </div>
-                <div class="faq-content bg-white px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-teal-50">
-                    <p class="py-5 leading-relaxed"><strong class="text-red-600">Strictly NO.</strong> Applying for other loans triggers a "Hard Inquiry" and will crash your score instantly. You must not apply anywhere else.</p>
+                <div class="faq-content bg-white px-4 md:px-6 text-[12px] md:text-[14px] text-gray-600 font-medium border-t border-teal-50">
+                    <p class="py-4 md:py-5 leading-relaxed"><strong class="text-red-600">Strictly NO.</strong> Applying for other loans triggers a "Hard Inquiry" and will crash your score instantly. You must not apply anywhere else.</p>
                 </div>
             </div>
             <!-- FAQ 7 -->
             <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
-                <div class="p-6 flex justify-between items-center font-bold text-[14px] md:text-[15px] text-wealth-darkest">
-                    How does the Reset Protocol actually remove defaults?
-                    <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
-                </div>
-                <div class="faq-content bg-white px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-teal-50">
-                    <p class="py-5 leading-relaxed">We act under the CIC Act, filing targeted disputes to challenge inaccuracies. If creditors cannot verify the data within 30 days, bureaus must remove the mark.</p>
-                </div>
-            </div>
-            <!-- FAQ 8 -->
-            <div class="minimal-card overflow-hidden cursor-pointer faq-item" onclick="this.classList.toggle('faq-open')">
-                <div class="p-6 flex justify-between items-center font-bold text-[14px] md:text-[15px] text-wealth-darkest">
+                <div class="p-4 md:p-6 flex justify-between items-center font-bold text-[13px] md:text-[15px] text-wealth-darkest">
                     When will I receive my Usable Credit Card?
-                    <i data-lucide="chevron-down" class="w-5 h-5 faq-icon transition-transform"></i>
+                    <i data-lucide="chevron-down" class="w-4 h-4 md:w-5 md:h-5 faq-icon transition-transform"></i>
                 </div>
-                <div class="faq-content bg-white px-6 text-[13px] md:text-[14px] text-gray-600 font-medium border-t border-teal-50">
-                    <p class="py-5 leading-relaxed">Once capital and KYC are verified, the physical credit card is dispatched by the banking partner and arrives within 5 to 7 working days.</p>
+                <div class="faq-content bg-white px-4 md:px-6 text-[12px] md:text-[14px] text-gray-600 font-medium border-t border-teal-50">
+                    <p class="py-4 md:py-5 leading-relaxed">Once capital and KYC are verified, the physical credit card is dispatched by the banking partner and arrives within 5 to 7 working days.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW SLEEK FINAL CTA GRID (Deep Teal Matrix) -->
-    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 md:px-8">
-        <div class="bg-gradient-to-br from-wealth-darkest to-wealth-dark rounded-[3rem] p-8 md:p-14 text-center text-white shadow-2xl relative overflow-hidden reveal">
-            <!-- Subtle Teal Glow Effects inside the dark box -->
-            <div class="absolute -top-32 -left-32 w-80 h-80 bg-wealth-teal/40 rounded-full blur-[80px]"></div>
-            <div class="absolute -bottom-32 -right-32 w-80 h-80 bg-wealth-mint/20 rounded-full blur-[80px]"></div>
-
-            <div class="w-16 h-16 mx-auto bg-white/10 rounded-[1.5rem] flex items-center justify-center shadow-lg border border-white/20 mb-8 relative z-10 backdrop-blur-md">
-                <i data-lucide="fingerprint" class="w-8 h-8 text-wealth-mint"></i>
+    <!-- GRAND FINALE -->
+    <section class="py-12 md:py-24 max-w-7xl mx-auto px-4 md:px-8">
+        <div class="bg-gradient-to-br from-wealth-darkest to-wealth-dark rounded-[2rem] md:rounded-[3rem] p-6 md:p-14 text-center text-white shadow-2xl relative overflow-hidden reveal">
+            <div class="absolute -top-32 -left-32 w-64 md:w-80 h-64 md:h-80 bg-wealth-teal/40 rounded-full blur-[80px]"></div>
+            
+            <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-white/10 rounded-xl md:rounded-[1.5rem] flex items-center justify-center shadow-lg border border-white/20 mb-6 md:mb-8 relative z-10 backdrop-blur-md">
+                <i data-lucide="fingerprint" class="w-6 h-6 md:w-8 md:h-8 text-wealth-mint"></i>
             </div>
             
-            <h2 class="relative z-10 font-extrabold text-3xl md:text-5xl tracking-tight mb-5">Begin Your Evolution.</h2>
-            <p class="relative z-10 text-teal-100/80 text-[14px] md:text-[15px] font-medium mb-12 max-w-xl mx-auto">Select your protocol below to send an encrypted authorization request directly to our official WhatsApp terminal.</p>
+            <h2 class="relative z-10 font-extrabold text-2xl md:text-5xl tracking-tight mb-3 md:mb-5">Begin Your Evolution.</h2>
+            <p class="relative z-10 text-teal-100/80 text-[12px] md:text-[15px] font-medium mb-8 md:mb-12 max-w-xl mx-auto">Select your protocol below to send an encrypted authorization request directly to our official WhatsApp terminal.</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto relative z-10">
-                <!-- CTA 1 (Rounded Deep Teal) -->
-                <a href="https://wa.me/919836196650?text=Hello%20Homnivas%20Team%2C%20I%20agree%20to%20start%20the%20journey%20and%20initiate%20my%20Genesis%20Standard%20Protocol%20(%E2%82%B934%2C999)." target="_blank" class="bg-wealth-darker/60 hover:bg-wealth-darker border border-wealth-teal/30 hover:border-wealth-mint p-8 rounded-[2rem] transition-all duration-300 flex flex-col items-center backdrop-blur-md shadow-xl group">
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-teal-200 mb-3">No CIBIL + No Income</span>
-                    <span class="font-extrabold text-xl md:text-2xl text-white mb-1">Genesis Standard</span>
-                    <span class="text-sm font-semibold text-teal-100/70 mb-6">₹34,999</span>
-                    <div class="mt-auto bg-white text-wealth-darkest group-hover:text-wealth-teal px-6 py-3.5 rounded-2xl font-extrabold text-[13px] w-full flex justify-center items-center gap-2 shadow-md uppercase tracking-wider transition-colors">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 max-w-5xl mx-auto relative z-10">
+                <!-- CTA 1 -->
+                <a href="https://wa.me/919836196650?text=Hello%20Homnivas%20Team%2C%20I%20agree%20to%20start%20the%20journey%20and%20initiate%20my%20Genesis%20Standard%20Protocol%20(%E2%82%B934%2C999)." target="_blank" class="bg-wealth-darker/60 hover:bg-wealth-darker border border-wealth-teal/30 hover:border-wealth-mint p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-300 flex flex-col items-center backdrop-blur-md shadow-xl group">
+                    <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-teal-200 mb-2 md:mb-3">No CIBIL + No Income</span>
+                    <span class="font-extrabold text-lg md:text-2xl text-white mb-1">Genesis Standard</span>
+                    <span class="text-xs md:text-sm font-semibold text-teal-100/70 mb-5 md:mb-6">₹34,999</span>
+                    <div class="mt-auto bg-white text-wealth-darkest group-hover:text-wealth-teal px-5 py-3 md:px-6 md:py-3.5 rounded-xl md:rounded-2xl font-extrabold text-[12px] md:text-[13px] w-full flex justify-center items-center gap-2 shadow-md uppercase tracking-wider transition-colors">
                         <i data-lucide="message-circle" class="w-4 h-4"></i> Apply Now
                     </div>
                 </a>
                 
-                <!-- CTA 2 (Rounded Deep Teal) -->
-                <a href="https://wa.me/919836196650?text=Hello%20Homnivas%20Team%2C%20I%20agree%20to%20start%20the%20journey%20and%20initiate%20my%20Genesis%20Verified%20Protocol%20(%E2%82%B914%2C999)." target="_blank" class="bg-wealth-darker/60 hover:bg-wealth-darker border border-wealth-teal/30 hover:border-wealth-mint p-8 rounded-[2rem] transition-all duration-300 flex flex-col items-center backdrop-blur-md shadow-xl group">
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-teal-200 mb-3">No CIBIL + Has Income</span>
-                    <span class="font-extrabold text-xl md:text-2xl text-white mb-1">Genesis Verified</span>
-                    <span class="text-sm font-semibold text-teal-100/70 mb-6">₹14,999</span>
-                    <div class="mt-auto bg-white text-wealth-darkest group-hover:text-wealth-teal px-6 py-3.5 rounded-2xl font-extrabold text-[13px] w-full flex justify-center items-center gap-2 shadow-md uppercase tracking-wider transition-colors">
+                <!-- CTA 2 -->
+                <a href="https://wa.me/919836196650?text=Hello%20Homnivas%20Team%2C%20I%20agree%20to%20start%20the%20journey%20and%20initiate%20my%20Genesis%20Verified%20Protocol%20(%E2%82%B914%2C999)." target="_blank" class="bg-wealth-darker/60 hover:bg-wealth-darker border border-wealth-teal/30 hover:border-wealth-mint p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-300 flex flex-col items-center backdrop-blur-md shadow-xl group">
+                    <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-teal-200 mb-2 md:mb-3">No CIBIL + Has Income</span>
+                    <span class="font-extrabold text-lg md:text-2xl text-white mb-1">Genesis Verified</span>
+                    <span class="text-xs md:text-sm font-semibold text-teal-100/70 mb-5 md:mb-6">₹14,999</span>
+                    <div class="mt-auto bg-white text-wealth-darkest group-hover:text-wealth-teal px-5 py-3 md:px-6 md:py-3.5 rounded-xl md:rounded-2xl font-extrabold text-[12px] md:text-[13px] w-full flex justify-center items-center gap-2 shadow-md uppercase tracking-wider transition-colors">
                         <i data-lucide="message-circle" class="w-4 h-4"></i> Apply Now
                     </div>
                 </a>
                 
-                <!-- CTA 3 (Rounded Deep Teal) -->
-                <a href="https://wa.me/919836196650?text=Hello%20Homnivas%20Team%2C%20I%20agree%20to%20start%20the%20journey%20and%20initiate%20my%20CIBIL%20Reset%20Protocol%20(%E2%82%B916%2C000)." target="_blank" class="bg-wealth-darker/60 hover:bg-wealth-darker border border-wealth-teal/30 hover:border-wealth-mint p-8 rounded-[2rem] transition-all duration-300 flex flex-col items-center backdrop-blur-md shadow-xl group">
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-teal-200 mb-3">Bad/Negative CIBIL</span>
-                    <span class="font-extrabold text-xl md:text-2xl text-white mb-1">Reset Protocol</span>
-                    <span class="text-sm font-semibold text-teal-100/70 mb-6">₹16,000</span>
-                    <div class="mt-auto bg-white text-wealth-darkest group-hover:text-wealth-teal px-6 py-3.5 rounded-2xl font-extrabold text-[13px] w-full flex justify-center items-center gap-2 shadow-md uppercase tracking-wider transition-colors">
+                <!-- CTA 3 -->
+                <a href="https://wa.me/919836196650?text=Hello%20Homnivas%20Team%2C%20I%20agree%20to%20start%20the%20journey%20and%20initiate%20my%20CIBIL%20Reset%20Protocol%20(%E2%82%B916%2C000)." target="_blank" class="bg-wealth-darker/60 hover:bg-wealth-darker border border-wealth-teal/30 hover:border-wealth-mint p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-300 flex flex-col items-center backdrop-blur-md shadow-xl group">
+                    <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-teal-200 mb-2 md:mb-3">Bad/Negative CIBIL</span>
+                    <span class="font-extrabold text-lg md:text-2xl text-white mb-1">Reset Protocol</span>
+                    <span class="text-xs md:text-sm font-semibold text-teal-100/70 mb-5 md:mb-6">₹16,000</span>
+                    <div class="mt-auto bg-white text-wealth-darkest group-hover:text-wealth-teal px-5 py-3 md:px-6 md:py-3.5 rounded-xl md:rounded-2xl font-extrabold text-[12px] md:text-[13px] w-full flex justify-center items-center gap-2 shadow-md uppercase tracking-wider transition-colors">
                         <i data-lucide="message-circle" class="w-4 h-4"></i> Apply Now
                     </div>
                 </a>
@@ -425,74 +411,74 @@
         </div>
     </section>
 
-    <!-- FOOTER (Deep Teal Theme to anchor the bottom) -->
-    <footer class="bg-wealth-darkest border-t border-wealth-teal/20 pt-16 pb-12 px-5 md:px-8 rounded-t-[3rem] sm:rounded-t-[4rem]">
+    <!-- FOOTER -->
+    <footer class="bg-wealth-darkest border-t border-wealth-teal/20 pt-12 md:pt-16 pb-10 md:pb-12 px-5 md:px-8 rounded-t-[2.5rem] sm:rounded-t-[4rem]">
         <div class="max-w-7xl mx-auto flex flex-col items-center">
-            <div class="flex items-center gap-2.5 mb-6">
-                <div class="w-8 h-8 bg-white rounded-xl flex items-center justify-center text-wealth-darkest shadow-md">
-                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <div class="flex items-center gap-2 mb-4 md:mb-6">
+                <div class="w-6 h-6 md:w-8 md:h-8 bg-white rounded-lg md:rounded-xl flex items-center justify-center text-wealth-darkest shadow-md">
+                    <svg class="w-3.5 h-3.5 md:w-4 md:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                         <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                         <line x1="12" y1="22.08" x2="12" y2="12"></line>
                     </svg>
                 </div>
-                <div class="font-extrabold text-2xl tracking-tight text-white">Homnivas<span class="text-wealth-teal">.space</span></div>
+                <div class="font-extrabold text-lg md:text-2xl tracking-tight text-white">Homnivas<span class="text-wealth-teal">.space</span></div>
             </div>
             
-            <p class="text-wealth-mint font-bold text-[10px] uppercase tracking-widest mb-10">Your Space. Our Care.</p>
+            <p class="text-wealth-mint font-bold text-[9px] md:text-[10px] uppercase tracking-widest mb-8 md:mb-10">Your Space. Our Care.</p>
 
-            <div class="flex flex-wrap justify-center gap-4 mb-10">
-                <div class="flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-wealth-darker border border-wealth-teal/30 text-teal-100 text-[10px] font-bold uppercase tracking-wider shadow-sm">
-                    <i data-lucide="shield-check" class="w-4 h-4 text-wealth-teal"></i> RBI Compliant
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 md:mb-10">
+                <div class="flex items-center gap-1.5 md:gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-xl md:rounded-2xl bg-wealth-darker border border-wealth-teal/30 text-teal-100 text-[9px] md:text-[10px] font-bold uppercase tracking-wider shadow-sm">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 md:w-4 md:h-4 text-wealth-teal"></i> RBI Compliant
                 </div>
-                <div class="flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-wealth-darker border border-wealth-teal/30 text-teal-100 text-[10px] font-bold uppercase tracking-wider shadow-sm">
-                    <i data-lucide="lock" class="w-4 h-4 text-wealth-teal"></i> AES-256 SSL
+                <div class="flex items-center gap-1.5 md:gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-xl md:rounded-2xl bg-wealth-darker border border-wealth-teal/30 text-teal-100 text-[9px] md:text-[10px] font-bold uppercase tracking-wider shadow-sm">
+                    <i data-lucide="lock" class="w-3.5 h-3.5 md:w-4 md:h-4 text-wealth-teal"></i> AES-256 SSL
                 </div>
             </div>
             
-            <div class="flex flex-wrap justify-center gap-6 sm:gap-10 mb-10 text-[12px] sm:text-[13px] font-bold text-teal-100/70 uppercase tracking-widest">
+            <div class="flex flex-wrap justify-center gap-5 sm:gap-10 mb-8 md:mb-10 text-[10px] sm:text-[13px] font-bold text-teal-100/70 uppercase tracking-widest">
                 <button onclick="openModal('privacy')" class="hover:text-white transition outline-none">Privacy Policy</button>
-                <button onclick="openModal('terms')" class="hover:text-white transition outline-none">Terms & Conditions</button>
+                <button onclick="openModal('terms')" class="hover:text-white transition outline-none">Terms</button>
                 <button onclick="openModal('contact')" class="hover:text-white transition outline-none">Contact Us</button>
             </div>
 
-            <p class="text-[11px] text-teal-100/50 font-medium mb-8 max-w-xl text-center leading-relaxed">
+            <p class="text-[10px] md:text-[11px] text-teal-100/50 font-medium mb-6 md:mb-8 max-w-xl text-center leading-relaxed">
                 Homnivas Finance operates strictly as a technology and advisory infrastructure. Card issuance, deposit accounts, and loan underwriting are subject to the exclusive mandate of our RBI-licensed banking partners.
             </p>
             
-            <div class="text-[10px] font-bold text-teal-100/30 uppercase tracking-widest text-center">
+            <div class="text-[9px] md:text-[10px] font-bold text-teal-100/30 uppercase tracking-widest text-center">
                 &copy; 2026 Homnivas.space
             </div>
         </div>
     </footer>
 
-    <!-- DETAILED LEGAL MODALS (Deep Teal Text Update) -->
+    <!-- DETAILED LEGAL MODALS -->
     <div id="legalModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-wealth-darkest/90 backdrop-blur-md transition-opacity duration-300 opacity-0">
-        <div class="bg-white w-full max-w-3xl rounded-[2.5rem] p-8 sm:p-12 max-h-[85vh] flex flex-col relative shadow-2xl transform transition-transform duration-300 scale-95" id="modalContainer">
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-wealth-darkest transition outline-none bg-teal-50 p-3 rounded-full hover:bg-teal-100 z-20">
-                <i data-lucide="x" class="w-5 h-5"></i>
+        <div class="bg-white w-full max-w-3xl rounded-[2rem] md:rounded-[2.5rem] p-6 sm:p-12 max-h-[85vh] flex flex-col relative shadow-2xl transform transition-transform duration-300 scale-95" id="modalContainer">
+            <button onclick="closeModal()" class="absolute top-4 right-4 md:top-6 md:right-6 text-gray-400 hover:text-wealth-darkest transition outline-none bg-teal-50 p-2 md:p-3 rounded-full hover:bg-teal-100 z-20">
+                <i data-lucide="x" class="w-4 h-4 md:w-5 md:h-5"></i>
             </button>
-            <h2 id="modalTitle" class="font-extrabold text-2xl md:text-3xl tracking-tight mb-6 text-wealth-darkest border-b border-teal-100 pb-5 pr-8"></h2>
-            <div id="modalContent" class="modal-scroll overflow-y-auto text-gray-600 text-[14px] leading-relaxed pr-4"></div>
+            <h2 id="modalTitle" class="font-extrabold text-xl md:text-3xl tracking-tight mb-4 md:mb-6 text-wealth-darkest border-b border-teal-100 pb-3 md:pb-5 pr-8"></h2>
+            <div id="modalContent" class="modal-scroll overflow-y-auto text-gray-600 text-[12px] md:text-[14px] leading-relaxed pr-3 md:pr-4"></div>
         </div>
     </div>
 
-    <!-- TOAST NOTIFICATION (Light Mode with Teal Accent - Fully Rounded) -->
+    <!-- TOAST NOTIFICATION -->
     <div id="socialProofToast" class="fixed bottom-6 left-4 right-20 sm:right-auto sm:left-8 z-50 transform translate-y-24 opacity-0 transition-all duration-500 ease-out pointer-events-none max-w-[280px] sm:max-w-sm">
-        <div class="bg-white shadow-[0_15px_30px_rgba(13,148,136,0.15)] rounded-[2rem] p-4 sm:p-5 flex items-center gap-4 border border-teal-100">
-            <div class="w-3 h-3 rounded-full bg-wealth-mint animate-pulse flex-shrink-0 shadow-[0_0_10px_rgba(20,184,166,0.6)]"></div>
+        <div class="bg-white shadow-[0_15px_30px_rgba(13,148,136,0.15)] rounded-[1.5rem] md:rounded-[2rem] p-3.5 sm:p-5 flex items-center gap-3 md:gap-4 border border-teal-100">
+            <div class="w-2.5 h-2.5 rounded-full bg-wealth-mint animate-pulse flex-shrink-0 shadow-[0_0_10px_rgba(20,184,166,0.6)]"></div>
             <div class="flex-1 min-w-0">
-                <p class="text-[11px] sm:text-[13px] text-gray-600 font-medium leading-tight">
+                <p class="text-[10px] sm:text-[13px] text-gray-600 font-medium leading-tight">
                     <span id="toastUser" class="text-wealth-darkest font-extrabold"></span> <span id="toastAction"></span>
                 </p>
-                <p id="toastTime" class="text-[9px] sm:text-[10px] text-wealth-teal font-bold mt-1.5 uppercase tracking-widest"></p>
+                <p id="toastTime" class="text-[8px] sm:text-[10px] text-wealth-teal font-bold mt-1 md:mt-1.5 uppercase tracking-widest"></p>
             </div>
         </div>
     </div>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/919836196650" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-[90] bg-[#25D366] text-white p-4 sm:p-5 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300 flex items-center justify-center group outline-none">
-        <i data-lucide="message-circle" class="w-7 h-7 fill-current"></i>
+    <a href="https://wa.me/919836196650" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-[90] bg-[#25D366] text-white p-3.5 md:p-5 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300 flex items-center justify-center group outline-none">
+        <i data-lucide="message-circle" class="w-6 h-6 md:w-7 md:h-7 fill-current"></i>
         <span class="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-30 animate-ping"></span>
     </a>
 
@@ -523,11 +509,11 @@
             document.getElementById('heroVideoContainer').classList.remove('is-playing');
         });
 
-        // --- PLAN DATA (The Brain) ---
+        // --- PLAN DATA (4 STEPS FOR ALL) ---
         const planData = {
             standard: {
                 id: 'standard', name: 'Genesis Standard', price: '₹34,999',
-                target: '<i data-lucide="target" class="w-4 h-4"></i> For: 0/-1 CIBIL. No Income Proof. (Students/Freelancers)',
+                target: '<i data-lucide="target" class="w-3.5 h-3.5 md:w-4 md:h-4"></i> For: 0/-1 CIBIL. No Income Proof. (Students/Freelancers)',
                 targetColor: 'bg-orange-50 text-orange-700 border-orange-200',
                 totalText: '₹30,000 remains 100% your personal asset locked in Premium Banking & RD.',
                 ctaBtnText: 'Start Genesis Standard (₹34,999)',
@@ -539,14 +525,15 @@
                     { price: '₹20,000', title: 'Recurring Deposit', desc: 'Creates asset-backed trust for a secure credit line.', icon: 'piggy-bank' }
                 ],
                 steps: [
-                    { day: 'Day 1-30', title: '1. Account Setup', icon: 'wallet', you: 'Sign agreement, complete KYC, and deploy ₹34,999.', we: 'We open your premium account and RD, triggering a credit line.' },
-                    { day: 'Day 31-89', title: '2. History Building', icon: 'trending-up', you: 'Make small transactions and pay before the due date.', we: 'RM guides payments, rocketing score from 0 to 750+.' },
-                    { day: 'Day 90+', title: '3. Final Loan', icon: 'check-circle', you: 'Provide final bank statement.', we: 'We submit file for unsecured Personal Loan up to ₹5 Lakh.' }
+                    { day: 'Day 1', title: '1. Capital Deployment', icon: 'wallet', you: 'Sign digital agreement, complete 1-min KYC, and deploy ₹34,999 capital.', we: 'We open your premium account and RD with our partner bank.' },
+                    { day: 'Day 2-30', title: '2. Profile Incubation', icon: 'shield-check', you: 'Receive your physical card and activate your limit.', we: 'Your RD triggers a secure credit line. Bureau profile generation begins.' },
+                    { day: 'Day 31-89', title: '3. History Building', icon: 'trending-up', you: 'Make small transactions and pay strictly before the due date.', we: 'RM guides payments, reporting to bureaus to rocket your score from 0 to 750+.' },
+                    { day: 'Day 90+', title: '4. Final Loan', icon: 'check-circle', you: 'Provide final updated bank statement.', we: 'Profile becomes "Excellent". We submit file for unsecured Loan up to ₹5 Lakh.' }
                 ]
             },
             verified: {
                 id: 'verified', name: 'Genesis Verified', price: '₹14,999',
-                target: '<i data-lucide="target" class="w-4 h-4"></i> For: 0/-1 CIBIL. Has Verifiable Salary/Income Proof.',
+                target: '<i data-lucide="target" class="w-3.5 h-3.5 md:w-4 md:h-4"></i> For: 0/-1 CIBIL. Has Verifiable Salary/Income Proof.',
                 targetColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
                 totalText: '₹10,000 is directly allocated as your usable card limit. No RD required.',
                 ctaBtnText: 'Start Genesis Verified (₹14,999)',
@@ -557,14 +544,15 @@
                     { price: '₹10,000', title: 'Card Limit', desc: 'Capital allocated to your new credit card. Fully usable.', icon: 'credit-card' }
                 ],
                 steps: [
-                    { day: 'Day 1-30', title: '1. Account Setup', icon: 'wallet', you: 'Sign agreement, verify income, deploy ₹14,999.', we: 'We secure new credit card limit backed by income verification.' },
-                    { day: 'Day 31-89', title: '2. History Building', icon: 'trending-up', you: 'Use card for small expenses and clear bills on time.', we: 'Fresh repayment history generates premium 750+ score.' },
-                    { day: 'Day 90+', title: '3. Final Loan', icon: 'check-circle', you: 'Provide latest salary/business statements.', we: 'Process "Excellent" profile for premium unsecured Loan.' }
+                    { day: 'Day 1', title: '1. Income Verification', icon: 'wallet', you: 'Sign agreement, verify income proof, and deploy ₹14,999.', we: 'We map your profile to a partner bank and secure your card limit.' },
+                    { day: 'Day 2-30', title: '2. Profile Generation', icon: 'shield-check', you: 'Receive physical credit card and set up your PIN.', we: 'Your first credit footprint is officially reported to the credit bureaus.' },
+                    { day: 'Day 31-89', title: '3. History Building', icon: 'trending-up', you: 'Use card for small expenses and clear bills on time.', we: 'Fresh repayment history pushes your CIBIL to the premium 750+ tier.' },
+                    { day: 'Day 90+', title: '4. Final Loan', icon: 'check-circle', you: 'Provide latest salary/business statements.', we: 'We process your "Excellent" profile for a premium unsecured Personal Loan.' }
                 ]
             },
             reset: {
                 id: 'reset', name: 'Reset Protocol', price: '₹16,000',
-                target: '<i data-lucide="shield-alert" class="w-4 h-4"></i> For: Bad/Negative CIBIL. Needs Legal Dispute & Cleanup.',
+                target: '<i data-lucide="shield-alert" class="w-3.5 h-3.5 md:w-4 md:h-4"></i> For: Bad/Negative CIBIL. Needs Legal Dispute & Cleanup.',
                 targetColor: 'bg-red-50 text-red-700 border-red-200',
                 totalText: '₹10,000 is your usable card limit. ₹6,000 is the legal cleanup fee.',
                 ctaBtnText: 'Initiate Reset Protocol (₹16,000)',
@@ -575,86 +563,86 @@
                     { price: '₹10,000', title: 'Card Limit', desc: 'Transferred to Credit Card account. Fully usable.', icon: 'credit-card' }
                 ],
                 steps: [
-                    { day: 'Day 1', title: '1. Account Setup', icon: 'wallet', you: 'Sign agreement, complete KYC, transfer ₹16,000.', we: 'Open secure account and dispatch physical credit card.' },
-                    { day: 'Day 8-45', title: '2. Cleanup Operation', icon: 'shield-alert', you: 'Use card, strictly avoid applying for other loans.', we: 'Legal teams file disputes to remove defaults.' },
-                    { day: 'Day 46-89', title: '3. Score Incubation', icon: 'trending-up', you: 'Pay small credit card bill strictly on time.', we: 'Negative marks removed, positive history built.' },
-                    { day: 'Day 90+', title: '4. Final Loan', icon: 'check-circle', you: 'Provide final updated bank statement.', we: 'Leverage partners for ₹2 Lakh to ₹5 Lakh loan sanction.' }
+                    { day: 'Day 1', title: '1. Account Setup', icon: 'wallet', you: 'Sign agreement, complete KYC, and transfer ₹16,000.', we: 'We open your secure account and dispatch your physical credit card.' },
+                    { day: 'Day 8-45', title: '2. Cleanup Operation', icon: 'shield-alert', you: 'Use your new card and strictly avoid applying for other loans online.', we: 'Our legal teams officially file disputes to remove old defaults and fake entries.' },
+                    { day: 'Day 46-89', title: '3. Score Incubation', icon: 'trending-up', you: 'Pay your small credit card bill strictly on time.', we: 'Negative marks are removed while positive history is built, skyrocketing your score.' },
+                    { day: 'Day 90+', title: '4. Final Loan', icon: 'check-circle', you: 'Provide final updated bank statement.', we: 'We leverage our partners to get a ₹2 Lakh to ₹5 Lakh loan sanctioned.' }
                 ]
             }
         };
 
-        // --- RENDER LOGIC (Deep Teal Styling & Max Rounding) ---
+        // --- RENDER LOGIC ---
         function switchPlan(planId) {
             const plan = planData[planId];
             const baseUrl = "https://wa.me/919836196650?text=";
             const fullWaUrl = baseUrl + encodeURIComponent(plan.waText);
 
-            // 1. Tabs UI (Deep Teal Active State)
+            // 1. Tabs UI 
             ['standard', 'verified', 'reset'].forEach(id => {
                 const tab = document.getElementById(`tab-${id}`);
                 if(id === planId) {
-                    tab.className = "flex-1 flex flex-col items-center justify-center py-2.5 sm:py-3 rounded-[1.5rem] transition-all duration-300 outline-none w-1/3 bg-wealth-darkest text-white shadow-lg border border-wealth-teal/50 scale-105 z-10";
+                    tab.className = "flex-1 flex flex-col items-center justify-center py-2 md:py-3 rounded-[1.25rem] md:rounded-[1.5rem] transition-all duration-300 outline-none w-1/3 bg-wealth-darkest text-white shadow-lg border border-wealth-teal/50 scale-105 z-10";
                 } else {
-                    tab.className = "flex-1 flex flex-col items-center justify-center py-2.5 sm:py-3 rounded-[1.5rem] transition-all duration-300 outline-none w-1/3 bg-transparent text-teal-800 hover:bg-teal-100/50 border border-transparent";
+                    tab.className = "flex-1 flex flex-col items-center justify-center py-2 md:py-3 rounded-[1.25rem] md:rounded-[1.5rem] transition-all duration-300 outline-none w-1/3 bg-transparent text-teal-800 hover:bg-teal-100/50 border border-transparent";
                 }
             });
 
-            // 2. Target Warning (Max Rounding)
+            // 2. Target Warning
             const targetEl = document.getElementById('plan-target');
             targetEl.classList.remove('content-fade'); void targetEl.offsetWidth; 
             targetEl.innerHTML = plan.target;
-            targetEl.className = `inline-flex items-center gap-1.5 text-[11px] md:text-[13px] font-bold px-5 py-2.5 rounded-2xl border shadow-sm transition-all content-fade ${plan.targetColor}`;
+            targetEl.className = `inline-flex items-center gap-1.5 md:gap-2 text-[10px] md:text-[13px] font-bold px-4 py-2 md:px-5 md:py-2.5 rounded-xl md:rounded-2xl border shadow-sm transition-all content-fade ${plan.targetColor}`;
 
-            // 3. Update Minimal Teal Cards (Max Rounding)
+            // 3. Cards 
             const cardsContainer = document.getElementById('plan-cards');
             cardsContainer.classList.remove('content-fade'); void cardsContainer.offsetWidth;
-            cardsContainer.className = `grid grid-cols-1 ${plan.gridCols} gap-5 md:gap-8 mx-auto mb-10 content-fade`;
+            cardsContainer.className = `grid grid-cols-1 ${plan.gridCols} gap-4 md:gap-6 mx-auto mb-8 md:mb-10 content-fade`;
             
             cardsContainer.innerHTML = plan.cards.map(card => `
-                <div class="minimal-card p-6 sm:p-8 text-center flex flex-col items-center hover:border-wealth-teal">
-                    <div class="w-14 h-14 bg-teal-50 border border-teal-100 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
-                        <i data-lucide="${card.icon}" class="w-6 h-6 text-wealth-teal"></i>
+                <div class="minimal-card p-5 md:p-8 text-center flex flex-col items-center hover:border-wealth-teal">
+                    <div class="w-10 h-10 md:w-14 md:h-14 bg-teal-50 border border-teal-100 rounded-[1rem] md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-sm">
+                        <i data-lucide="${card.icon}" class="w-5 h-5 md:w-6 md:h-6 text-wealth-teal"></i>
                     </div>
-                    <p class="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-2">Allocation</p>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-wealth-darkest mb-3 tracking-tight">${card.price}</h3>
-                    <h4 class="font-bold text-[14px] sm:text-[15px] text-wealth-teal mb-4">${card.title}</h4>
-                    <p class="text-[13px] font-medium text-gray-500 leading-relaxed">${card.desc}</p>
+                    <p class="text-[9px] md:text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-1 md:mb-1.5">Allocation</p>
+                    <h3 class="text-2xl sm:text-4xl font-extrabold text-wealth-darkest mb-2 md:mb-3 tracking-tight">${card.price}</h3>
+                    <h4 class="font-bold text-[13px] md:text-[15px] text-wealth-teal mb-2 md:mb-4">${card.title}</h4>
+                    <p class="text-[12px] md:text-[13px] font-medium text-gray-500 leading-relaxed">${card.desc}</p>
                 </div>
             `).join('');
 
-            // 4. Footer CTA (Deep Teal Button)
+            // 4. Footer CTA 
             const footerContainer = document.getElementById('plan-footer');
             footerContainer.classList.remove('content-fade'); void footerContainer.offsetWidth; footerContainer.classList.add('content-fade');
             document.getElementById('plan-total-text').innerText = plan.totalText;
             const ctaBtn = document.getElementById('plan-cta-btn');
-            ctaBtn.innerHTML = `<i data-lucide="message-circle" class="w-5 h-5 mr-1 text-white"></i> ${plan.ctaBtnText} <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>`;
+            ctaBtn.innerHTML = `<i data-lucide="message-circle" class="w-4 h-4 md:w-5 md:h-5 mr-1 text-white"></i> ${plan.ctaBtnText} <i data-lucide="arrow-right" class="w-3.5 h-3.5 md:w-4 md:h-4 ml-1"></i>`;
             ctaBtn.href = fullWaUrl;
 
-            // 5. Steps (Teal Theme, Max Rounding)
+            // 5. Steps (ALL 4 STEPS)
             const stepsContainer = document.getElementById('plan-steps');
             stepsContainer.classList.remove('content-fade'); void stepsContainer.offsetWidth; stepsContainer.classList.add('content-fade');
             
-            let stepsHtml = `<div class="absolute left-[24px] md:left-[32px] top-6 bottom-8 w-[2px] bg-teal-200 rounded-full"></div>`;
+            let stepsHtml = `<div class="absolute left-[20px] md:left-[32px] top-6 bottom-8 w-[2px] bg-teal-200 rounded-full"></div>`;
             stepsHtml += plan.steps.map((step, index) => {
                 const isLast = index === plan.steps.length - 1;
                 const circleBg = isLast ? 'bg-wealth-teal border-teal-100 shadow-[0_0_15px_rgba(13,148,136,0.5)]' : 'bg-white border-teal-300';
                 const iconColor = isLast ? 'text-white' : 'text-wealth-teal';
                 
                 return `
-                <div class="relative flex items-start gap-5 md:gap-8 mb-10">
-                    <div class="w-12 h-12 md:w-16 md:h-16 rounded-full border-[3px] flex items-center justify-center flex-shrink-0 z-10 relative ${circleBg}">
-                        <div class="absolute -top-2 -right-4 md:-right-6 bg-wealth-darkest text-white text-[9px] md:text-[10px] font-bold px-3 py-1 rounded-full uppercase shadow-md">${step.day}</div>
-                        <i data-lucide="${step.icon}" class="w-5 h-5 md:w-7 md:h-7 ${iconColor}"></i>
+                <div class="relative flex items-start gap-4 md:gap-8 mb-8 md:mb-10">
+                    <div class="w-10 h-10 md:w-16 md:h-16 rounded-full border-[3px] flex items-center justify-center flex-shrink-0 z-10 relative ${circleBg}">
+                        <div class="absolute -top-2 -right-4 md:-right-6 bg-wealth-darkest text-white text-[8px] md:text-[10px] font-bold px-2.5 md:px-3 py-0.5 md:py-1 rounded-full uppercase shadow-md">${step.day}</div>
+                        <i data-lucide="${step.icon}" class="w-4 h-4 md:w-7 md:h-7 ${iconColor}"></i>
                     </div>
-                    <div class="pt-0.5 flex-1 minimal-card p-6 md:p-8 text-left">
-                        <h3 class="font-extrabold text-[16px] md:text-xl text-wealth-darkest mb-5">${step.title}</h3>
-                        <div class="bg-teal-50/50 p-5 rounded-2xl border border-teal-100 mb-4">
-                            <strong class="text-wealth-darkest text-[12px] md:text-[13px] block mb-1">What You Do:</strong>
-                            <p class="text-gray-600 text-[12px] md:text-[13px] leading-relaxed">${step.you}</p>
+                    <div class="pt-0.5 flex-1 minimal-card p-5 md:p-8 text-left">
+                        <h3 class="font-extrabold text-[14px] md:text-xl text-wealth-darkest mb-3 md:mb-5">${step.title}</h3>
+                        <div class="bg-teal-50/50 p-4 md:p-5 rounded-[1rem] md:rounded-2xl border border-teal-100 mb-3 md:mb-4">
+                            <strong class="text-wealth-darkest text-[11px] md:text-[13px] block mb-1">What You Do:</strong>
+                            <p class="text-gray-600 text-[11px] md:text-[13px] leading-relaxed">${step.you}</p>
                         </div>
-                        <div class="p-5 rounded-2xl border border-wealth-teal/30 bg-teal-100/50">
-                            <strong class="text-wealth-teal text-[12px] md:text-[13px] block mb-1">What We Do:</strong>
-                            <p class="text-teal-900 font-medium text-[12px] md:text-[13px] leading-relaxed">${step.we}</p>
+                        <div class="p-4 md:p-5 rounded-[1rem] md:rounded-2xl border border-wealth-teal/30 bg-teal-100/50">
+                            <strong class="text-wealth-teal text-[11px] md:text-[13px] block mb-1">What We Do:</strong>
+                            <p class="text-teal-900 font-medium text-[11px] md:text-[13px] leading-relaxed">${step.we}</p>
                         </div>
                     </div>
                 </div>`;
@@ -670,10 +658,10 @@
             privacy: { 
                 title: "Privacy Policy", 
                 text: `
-                    <div class="space-y-6">
+                    <div class="space-y-4 md:space-y-6">
                         <p>Welcome to Homnivas Finance ("Homnivas.space", "we", "our"). Your privacy and the security of your financial data are our highest priorities. This policy outlines how we collect, process, and protect your information under the applicable laws of India.</p>
                         <section>
-                            <h3 class="text-wealth-darkest font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="database" class="w-5 h-5 text-wealth-teal"></i> 1. Information We Collect</h3>
+                            <h3 class="text-wealth-darkest font-bold text-base md:text-lg mb-2 flex items-center gap-2"><i data-lucide="database" class="w-4 h-4 md:w-5 md:h-5 text-wealth-teal"></i> 1. Information We Collect</h3>
                             <p class="mb-2 text-gray-600">To initiate the Genesis or Reset protocols, we securely collect necessary KYC and financial data, including but not limited to:</p>
                             <ul class="list-disc pl-5 space-y-1 text-gray-500">
                                 <li>Identity Information: Name, Date of Birth, Government-issued Identity documents (e.g., PAN, and masked identification numbers for verification purposes only).</li>
@@ -682,7 +670,7 @@
                             </ul>
                         </section>
                         <section>
-                            <h3 class="text-wealth-darkest font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="shield-check" class="w-5 h-5 text-wealth-teal"></i> 2. How We Use Your Data</h3>
+                            <h3 class="text-wealth-darkest font-bold text-base md:text-lg mb-2 flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 md:w-5 md:h-5 text-wealth-teal"></i> 2. How We Use Your Data</h3>
                             <ul class="list-disc pl-5 space-y-1 text-gray-500">
                                 <li>To perform necessary KYC (Know Your Customer) as mandated by the Reserve Bank of India (RBI).</li>
                                 <li>To execute legal disputes with Credit Information Companies (CICs) to rectify your credit score.</li>
@@ -691,7 +679,7 @@
                             <p class="mt-2 text-wealth-teal font-semibold">We do not sell, rent, or lease your personal data to any third-party marketing agencies.</p>
                         </section>
                         <section>
-                            <h3 class="text-wealth-darkest font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="lock" class="w-5 h-5 text-wealth-teal"></i> 3. Data Security & AES-256</h3>
+                            <h3 class="text-wealth-darkest font-bold text-base md:text-lg mb-2 flex items-center gap-2"><i data-lucide="lock" class="w-4 h-4 md:w-5 md:h-5 text-wealth-teal"></i> 3. Data Security & AES-256</h3>
                             <p class="text-gray-600">All sensitive information transmitted between your device and our servers is secured using military-grade AES-256 bit SSL encryption. Physical documents and digital files are stored in highly secure, compliant cloud vaults with restricted, audited employee access.</p>
                         </section>
                     </div>` 
@@ -699,25 +687,25 @@
             terms: { 
                 title: "Terms & Conditions", 
                 text: `
-                    <div class="space-y-6">
+                    <div class="space-y-4 md:space-y-6">
                         <p>By accessing Homnivas.space and enrolling in our Credit Genesis or Reset Protocols, you legally agree to be bound by the following terms.</p>
                         <section>
-                            <h3 class="text-wealth-darkest font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="file-text" class="w-5 h-5 text-wealth-teal"></i> 1. Scope of Service</h3>
+                            <h3 class="text-wealth-darkest font-bold text-base md:text-lg mb-2 flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4 md:w-5 md:h-5 text-wealth-teal"></i> 1. Scope of Service</h3>
                             <p class="text-gray-600">Homnivas Finance acts as a technology infrastructure and legal advisory firm. We specialize in credit profile generation and dispute resolution. We are not a direct lender. All credit limits, deposit accounts, and final personal loans are issued directly by our partner banking institutions.</p>
                         </section>
                         <section>
-                            <h3 class="text-wealth-darkest font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="credit-card" class="w-5 h-5 text-wealth-teal"></i> 2. Capital Structure & Retainer Fee</h3>
+                            <h3 class="text-wealth-darkest font-bold text-base md:text-lg mb-2 flex items-center gap-2"><i data-lucide="credit-card" class="w-4 h-4 md:w-5 md:h-5 text-wealth-teal"></i> 2. Capital Structure & Retainer Fee</h3>
                             <ul class="list-disc pl-5 space-y-1 text-gray-500">
                                 <li><strong>Usable Capital / RD:</strong> The portion allocated to your credit card limit or Recurring Deposit is deposited directly into your bank account. It remains your personal asset.</li>
                                 <li><strong>Legal & Advisory Retainer:</strong> The service fee (e.g., ₹4,999 or ₹6,000) is strictly <strong class="text-red-600">NON-REFUNDABLE</strong> once the legal documentation and backend syncing process begins.</li>
                             </ul>
                         </section>
                         <section>
-                            <h3 class="text-wealth-darkest font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-5 h-5 text-wealth-teal"></i> 3. The 90-Day Strict Mandate</h3>
+                            <h3 class="text-wealth-darkest font-bold text-base md:text-lg mb-2 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 md:w-5 md:h-5 text-wealth-teal"></i> 3. The 90-Day Strict Mandate</h3>
                             <p class="text-gray-600">Clients are strictly prohibited from applying for any external loans, credit cards, or digital lending apps during the 90-day incubation period. Initiating unauthorized "Hard Inquiries" or missing a monthly card payment will result in the immediate failure of the protocol.</p>
                         </section>
                         <section>
-                            <h3 class="text-wealth-darkest font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="scale" class="w-5 h-5 text-wealth-teal"></i> 4. Bank Discretion & Final Loans</h3>
+                            <h3 class="text-wealth-darkest font-bold text-base md:text-lg mb-2 flex items-center gap-2"><i data-lucide="scale" class="w-4 h-4 md:w-5 md:h-5 text-wealth-teal"></i> 4. Bank Discretion & Final Loans</h3>
                             <p class="text-gray-600">While we guarantee the initiation of disputes and the facilitation of your initial credit card limit, the final sanctioning of the ₹2 Lakh to ₹5 Lakh personal loan remains at the absolute discretion of the partner banks, based on your final CIBIL score and verifiable income.</p>
                         </section>
                     </div>` 
@@ -725,12 +713,12 @@
             contact: { 
                 title: "Contact Infrastructure", 
                 text: `
-                    <div class="space-y-6">
+                    <div class="space-y-4 md:space-y-6">
                         <p class="text-gray-600">Our dedicated execution team and Relationship Managers (RMs) are available to assist you through your 90-day financial evolution.</p>
                         
-                        <div class="bg-teal-50 p-6 rounded-3xl border border-teal-100">
-                            <h4 class="text-wealth-darkest font-bold text-base mb-3 flex items-center gap-2"><i data-lucide="building-2" class="w-5 h-5 text-wealth-teal"></i> Corporate Headquarters</h4>
-                            <p class="text-gray-600 leading-relaxed text-sm">
+                        <div class="bg-teal-50 p-5 md:p-6 rounded-[1.5rem] md:rounded-3xl border border-teal-100">
+                            <h4 class="text-wealth-darkest font-bold text-sm md:text-base mb-2 md:mb-3 flex items-center gap-2"><i data-lucide="building-2" class="w-4 h-4 md:w-5 md:h-5 text-wealth-teal"></i> Corporate Headquarters</h4>
+                            <p class="text-gray-600 leading-relaxed text-[13px] md:text-sm">
                                 Homnivas Finance Network<br>
                                 Regus Tower 1, Globsyn Crystal<br>
                                 Sector V, Salt Lake City<br>
@@ -739,24 +727,24 @@
                             </p>
                         </div>
                         
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <a href="https://wa.me/919836196650" target="_blank" class="flex items-center gap-4 p-5 rounded-2xl bg-white border border-gray-200 hover:border-[#25D366] transition shadow-sm">
-                                <div class="bg-[#25D366]/10 p-3 rounded-xl">
-                                    <i data-lucide="message-circle" class="w-6 h-6 text-[#25D366]"></i>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                            <a href="https://wa.me/919836196650" target="_blank" class="flex items-center gap-3 md:gap-4 p-4 md:p-5 rounded-xl md:rounded-2xl bg-white border border-gray-200 hover:border-[#25D366] transition shadow-sm">
+                                <div class="bg-[#25D366]/10 p-2.5 md:p-3 rounded-lg md:rounded-xl">
+                                    <i data-lucide="message-circle" class="w-5 h-5 md:w-6 md:h-6 text-[#25D366]"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-wealth-darkest font-bold text-sm">WhatsApp Terminal</h4>
-                                    <p class="text-xs text-gray-500 mt-1">+91 98361 96650</p>
+                                    <h4 class="text-wealth-darkest font-bold text-[13px] md:text-sm">WhatsApp Terminal</h4>
+                                    <p class="text-[11px] md:text-xs text-gray-500 mt-0.5 md:mt-1">+91 98361 96650</p>
                                 </div>
                             </a>
                             
-                            <a href="mailto:contact@homnivas.space" class="flex items-center gap-4 p-5 rounded-2xl bg-white border border-gray-200 hover:border-wealth-teal transition shadow-sm">
-                                <div class="bg-teal-50 p-3 rounded-xl">
-                                    <i data-lucide="mail" class="w-6 h-6 text-wealth-teal"></i>
+                            <a href="mailto:contact@homnivas.space" class="flex items-center gap-3 md:gap-4 p-4 md:p-5 rounded-xl md:rounded-2xl bg-white border border-gray-200 hover:border-wealth-teal transition shadow-sm">
+                                <div class="bg-teal-50 p-2.5 md:p-3 rounded-lg md:rounded-xl">
+                                    <i data-lucide="mail" class="w-5 h-5 md:w-6 md:h-6 text-wealth-teal"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-wealth-darkest font-bold text-sm">Email Support</h4>
-                                    <p class="text-xs text-gray-500 mt-1">contact@homnivas.space</p>
+                                    <h4 class="text-wealth-darkest font-bold text-[13px] md:text-sm">Email Support</h4>
+                                    <p class="text-[11px] md:text-xs text-gray-500 mt-0.5 md:mt-1">contact@homnivas.space</p>
                                 </div>
                             </a>
                         </div>
