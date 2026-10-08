@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Google Translate Script -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <script>
         tailwind.config = { 
             theme: { 
@@ -37,6 +40,14 @@
     <style>
         html, body { overflow-x: hidden; background-color: #f0fdfa; color: #022c22; }
         
+        /* HIDE GOOGLE TRANSLATE DEFAULT WIDGETS & BANNERS */
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
+        #google_translate_element { display: none !important; }
+        .goog-tooltip { display: none !important; }
+        .goog-tooltip:hover { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+
         /* Minimalist Scroll Reveal */
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
@@ -112,6 +123,9 @@
 </head>
 <body class="antialiased tracking-tight">
 
+    <!-- Hidden Native Google Translate Element -->
+    <div id="google_translate_element"></div>
+
     <!-- Top Banner -->
     <div class="fixed top-0 w-full z-[60] bg-wealth-teal text-white text-[9px] md:text-[11px] font-medium text-center py-2 px-3 flex items-center justify-center gap-2 uppercase tracking-widest shadow-sm">
         <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse flex-shrink-0 shadow-[0_0_8px_#ffffff]"></span>
@@ -121,7 +135,7 @@
     <!-- Header -->
     <header class="fixed top-[32px] w-full z-50 glass-panel shadow-sm transition-all">
         <div class="max-w-7xl mx-auto px-4 md:px-8 h-14 md:h-16 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2 md:gap-2.5 group">
+            <a href="#" class="flex items-center gap-2 md:gap-2.5 group notranslate">
                 <div class="flex items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-xl bg-wealth-darkest text-white shadow-md border border-wealth-dark transition group-hover:border-wealth-teal">
                     <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-wealth-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
@@ -133,9 +147,21 @@
                     Homnivas<span class="text-wealth-teal">.space</span>
                 </div>
             </a>
-            <div class="flex items-center gap-1.5">
-                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-wealth-teal hidden sm:block"></i>
-                <span class="text-[8px] sm:text-[10px] font-bold text-wealth-darker uppercase tracking-widest bg-wealth-light border border-teal-200 px-2 py-1 md:px-3 md:py-1.5 rounded-lg md:rounded-xl whitespace-nowrap">Official Partner Portal</span>
+            
+            <div class="flex items-center gap-1 md:gap-2">
+                <span class="text-[8px] sm:text-[10px] font-bold text-wealth-darker uppercase tracking-widest bg-wealth-light border border-teal-200 px-2 py-1 md:px-3 md:py-1.5 rounded-lg md:rounded-xl whitespace-nowrap hidden sm:block">Partner Portal</span>
+                
+                <!-- CUSTOM LANGUAGE SWITCHER -->
+                <div class="relative group ml-1">
+                    <button class="flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-wealth-darkest bg-white px-2 py-1 md:px-3 md:py-1.5 rounded-lg border border-teal-200 shadow-sm hover:border-wealth-teal transition outline-none notranslate">
+                        <i data-lucide="globe" class="w-3 h-3 text-wealth-teal"></i> <span id="currentLang">EN</span> <i data-lucide="chevron-down" class="w-3 h-3 text-gray-400"></i>
+                    </button>
+                    <div class="absolute right-0 mt-1 w-24 bg-white rounded-xl shadow-[0_10px_25px_rgba(13,148,136,0.15)] border border-teal-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col z-[100] overflow-hidden notranslate">
+                        <button onclick="changeLanguage('en', 'EN')" class="text-left px-3 py-2 text-[11px] font-bold text-wealth-darkest hover:bg-teal-50 hover:text-wealth-teal transition border-b border-teal-50">English</button>
+                        <button onclick="changeLanguage('hi', 'HI')" class="text-left px-3 py-2 text-[11px] font-bold text-wealth-darkest hover:bg-teal-50 hover:text-wealth-teal transition border-b border-teal-50">हिन्दी</button>
+                        <button onclick="changeLanguage('bn', 'BN')" class="text-left px-3 py-2 text-[11px] font-bold text-wealth-darkest hover:bg-teal-50 hover:text-wealth-teal transition">বাংলা</button>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -410,7 +436,7 @@
     <!-- FOOTER -->
     <footer class="bg-wealth-darkest border-t border-wealth-teal/20 pt-12 md:pt-16 pb-10 md:pb-12 px-5 md:px-8 rounded-t-[2.5rem] sm:rounded-t-[4rem]">
         <div class="max-w-7xl mx-auto flex flex-col items-center">
-            <div class="flex items-center gap-2 mb-4 md:mb-6">
+            <div class="flex items-center gap-2 mb-4 md:mb-6 notranslate">
                 <div class="w-6 h-6 md:w-8 md:h-8 bg-white rounded-lg md:rounded-xl flex items-center justify-center text-wealth-darkest shadow-md">
                     <svg class="w-3.5 h-3.5 md:w-4 md:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
@@ -442,7 +468,7 @@
                 Homnivas Finance operates strictly as a technology and training infrastructure. We equip consultants with digital portals and access to multiple banking products. Final loan sanctions and underwriting are subject to the exclusive mandate of our RBI-licensed banking partners.
             </p>
             
-            <div class="text-[9px] md:text-[10px] font-bold text-teal-100/30 uppercase tracking-widest text-center">
+            <div class="text-[9px] md:text-[10px] font-bold text-teal-100/30 uppercase tracking-widest text-center notranslate">
                 &copy; 2026 Homnivas.space
             </div>
         </div>
@@ -473,7 +499,7 @@
     </div>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/919836196650" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-[90] bg-[#25D366] text-white p-3.5 md:p-5 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300 flex items-center justify-center group outline-none">
+    <a href="https://wa.me/919836196650" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-[90] bg-[#25D366] text-white p-3.5 md:p-5 rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300 flex items-center justify-center group outline-none notranslate">
         <i data-lucide="message-circle" class="w-6 h-6 md:w-7 md:h-7 fill-current"></i>
         <span class="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-30 animate-ping"></span>
     </a>
@@ -481,6 +507,27 @@
     <!-- SCRIPTS -->
     <script>
         lucide.createIcons();
+
+        // --- GOOGLE TRANSLATE LOGIC ---
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,bn',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function changeLanguage(langCode, label) {
+            // Update UI Button Text
+            document.getElementById('currentLang').innerText = label;
+            
+            // Find the hidden Google Translate dropdown and trigger change
+            const select = document.querySelector('select.goog-te-combo');
+            if (select) {
+                select.value = langCode;
+                select.dispatchEvent(new Event('change'));
+            }
+        }
 
         // --- SCROLL REVEAL ---
         function reveal() {
